@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1.0",
+  "attestation_id": "TROVE-CURATA-REVIEW-REMEDY-001",
+  "status": "pending_independent_review",
+  "historical_subject": {
+    "repository": "grandchallenge/INTELLECT",
+    "work_package_id": "TROVE-CURATA-XREF-WP00",
+    "pull_request_number": 24,
+    "author_account": "fyremael",
+    "exact_merged_head": "b6158a995a97ae58abfe139925de4ec6c9cd0a0b",
+    "protected_merge_commit": "e080192f3c4cb1881cf781572dd1246b22792163",
+    "exact_head_ci_run": 30710145476,
+    "exact_head_conformance_run": 30710145683,
+    "submitted_review_count": 0,
+    "historically_reviewed": false
+  },
+  "remedy_contract": {
+    "historical_state_rewritten": false,
+    "required_review_event": "APPROVED",
+    "reviewer_must_be_non_author": true,
+    "reviewer_must_be_maintainer": true,
+    "review_must_target_final_head": true,
+    "comment_is_substitute": false,
+    "reaction_is_substitute": false,
+    "merge_action_is_substitute": false,
+    "author_self_review_is_substitute": false,
+    "protected_merge_required": true,
+    "prospective_remediation_only": true
+  },
+  "authority_boundary": {
+    "project_owner": "grandchallenge",
+    "project_scope": "gcl_contained",
+    "external_project_dependency": false,
+    "aether_role": "future_projection_nonblocking"
+  },
+  "claim_boundary": {
+    "dataset_quality_proved": false,
+    "privacy_proved": false,
+    "legality_proved": false,
+    "safety_proved": false,
+    "fitness_for_training_proved": false,
+    "downstream_improvement_proved": false,
+    "novelty_or_priority_claimed": false,
+    "commercial_claim_authorized": false
+  }
+}

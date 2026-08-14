@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/trove_curata_fixture_report.schema.json",
+  "title": "TC-FIXTURE-001 deterministic report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "fixture_id",
+    "configuration",
+    "configuration_sha256",
+    "case_count",
+    "cases",
+    "duplicate_checks",
+    "claims",
+    "passed"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "fixture_id": {"const": "TC-FIXTURE-001"},
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_id", "providers", "extraction", "network_required_for_replay", "fixture_bytes_authority"],
+      "properties": {
+        "fixture_id": {"const": "TC-FIXTURE-001"},
+        "providers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["daft", "trafilatura"],
+          "properties": {
+            "daft": {"const": "0.7.21"},
+            "trafilatura": {"const": "2.1.0"}
+          }
+        },
+        "extraction": {"type": "object"},
+        "network_required_for_replay": {"const": false},
+        "fixture_bytes_authority": {"const": "gcl_retained"}
+      }
+    },
+    "configuration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "case_count": {"const": 9},
+    "cases": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "case_class",
+          "source_record",
+          "transformation_receipts",
+          "passport",
+          "normalized_text",
+          "checks",
+          "missing_required_tokens",
+          "boilerplate_residue",
+          "novel_lexical_tokens",
+          "passed"
+        ],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "case_class": {"type": "string", "minLength": 1},
+          "source_record": {"type": "object"},
+          "transformation_receipts": {"type": "array", "minItems": 2, "maxItems": 2},
+          "passport": {"type": "object"},
+          "normalized_text": {"type": "string", "minLength": 1},
+          "checks": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "extraction_nonempty",
+              "language_metadata_matches",
+              "required_tokens_preserved",
+              "novel_lexical_tokens_absent",
+              "policy_not_auto_resolved"
+            ],
+            "properties": {
+              "extraction_nonempty": {"const": true},
+              "language_metadata_matches": {"const": true},
+              "required_tokens_preserved": {"const": true},
+              "novel_lexical_tokens_absent": {"const": true},
+              "policy_not_auto_resolved": {"const": true}
+            }
+          },
+          "missing_required_tokens": {"type": "array", "maxItems": 0},
+          "boilerplate_residue": {"type": "array"},
+          "novel_lexical_tokens": {"type": "array", "maxItems": 0},
+          "passed": {"const": true}
+        }
+      }
+    },
+    "duplicate_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["duplicate_group", "members", "normalized_digest_equal"],
+        "properties": {
+          "duplicate_group": {"type": "string"},
+          "members": {"type": "array", "minItems": 2},
+          "normalized_digest_equal": {"const": true}
+        }
+      }
+    },
+    "claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "corpus_admitted",
+        "quality_proved",
+        "privacy_proved",
+        "legality_proved",
+        "safety_proved",
+        "fitness_for_training_proved",
+        "downstream_improvement_proved",
+        "commercial_claim_authorized"
+      ],
+      "properties": {
+        "corpus_admitted": {"const": false},
+        "quality_proved": {"const": false},
+        "privacy_proved": {"const": false},
+        "legality_proved": {"const": false},
+        "safety_proved": {"const": false},
+        "fitness_for_training_proved": {"const": false},
+        "downstream_improvement_proved": {"const": false},
+        "commercial_claim_authorized": {"const": false}
+      }
+    },
+    "passed": {"const": true}
+  }
+}

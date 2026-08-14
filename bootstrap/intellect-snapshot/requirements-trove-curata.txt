@@ -1,0 +1,2 @@
+daft==0.7.21
+trafilatura==2.1.0

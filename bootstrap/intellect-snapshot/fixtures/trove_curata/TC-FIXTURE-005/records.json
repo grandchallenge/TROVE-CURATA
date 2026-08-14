@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1.0",
+  "fixture_id": "TC-FIXTURE-005",
+  "records": [
+    {"record_id":"repeated-lines","record_class":"general","language":"en","text":"Status line retained.\nStatus line retained.\nStatus line retained.\nDistinct closing line."},
+    {"record_id":"symbol-heavy","record_class":"general","language":"en","text":"alpha ::: ### $$$ %%% &&& *** beta !!! ??? gamma"},
+    {"record_id":"url-heavy","record_class":"general","language":"en","text":"References https://example.test/a and https://example.test/b accompany this ordinary sentence."},
+    {"record_id":"probe-disagreement","record_class":"general","language":"en","text":"alpha alpha alpha alpha alpha alpha beta beta beta beta gamma gamma delta delta epsilon epsilon"},
+    {"record_id":"long-clean","record_class":"general","language":"en","text":"The archive preserves source identity, transformation provenance, independent observations, and review boundaries. Each derived record carries explicit evidence without converting a measurement into authority. Reviewers can reproduce the same bounded calculations and inspect the resulting route without changing the underlying source."}
+  ]
+}

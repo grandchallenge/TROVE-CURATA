@@ -1,0 +1,108 @@
+{
+  "schema_version": "0.1.0",
+  "attestation_id": "TC-FIXTURE-004-REVIEW-REMEDY-001",
+  "status": "pending_independent_review",
+  "historical_subject": {
+    "repository": "grandchallenge/INTELLECT",
+    "work_package_id": "TC-FIXTURE-004",
+    "issue_number": 48,
+    "pull_request_number": 49,
+    "author_account": "fyremael",
+    "advertised_review_head": "7a88be479edc73d4b001e16047f4b199cbb89ae1",
+    "stale_review": {
+      "review_id": "PRR_kwDOTcUbys8AAAABIa9ueQ",
+      "reviewer": "jimsteeg",
+      "event": "APPROVED",
+      "submitted_at": "2026-08-05T00:53:42Z"
+    },
+    "stale_disposition": {
+      "comment_id": 5186276356,
+      "author": "fyremael",
+      "posted_at": "2026-08-05T00:54:28Z",
+      "stated_head": "7a88be479edc73d4b001e16047f4b199cbb89ae1",
+      "targeted_final_head": false
+    },
+    "final_merged_head": "6dc65962ec77e17ae5bdd2c75ccd5da63aefcef7",
+    "final_head_created_at": "2026-08-05T00:53:58Z",
+    "final_head_commit_kind": "merge_main_into_topic",
+    "protected_merge_commit": "6e2385a841dfd55bbab480d79a47611cc6557103",
+    "merged_at": "2026-08-05T00:54:46Z",
+    "historical_exact_head_review_satisfied": false,
+    "historical_exact_head_disposition_satisfied": false
+  },
+  "final_head_evidence": {
+    "head_sha": "6dc65962ec77e17ae5bdd2c75ccd5da63aefcef7",
+    "workflow_runs": [
+      {
+        "name": "CI",
+        "run_id": 30964757745,
+        "conclusion": "success"
+      },
+      {
+        "name": "GCL conformance",
+        "run_id": 30964758126,
+        "conclusion": "success"
+      },
+      {
+        "name": "TROVE-CURATA fixture",
+        "run_id": 30964757686,
+        "conclusion": "success"
+      },
+      {
+        "name": "TROVE-CURATA duplicate fixture",
+        "run_id": 30964757700,
+        "conclusion": "success"
+      }
+    ],
+    "all_required_workflows_successful": true,
+    "workflow_success_is_review_substitute": false
+  },
+  "defect": {
+    "kind": "approval_and_disposition_target_pre_final_head",
+    "review_preceded_final_head_seconds": 16,
+    "disposition_followed_final_head_seconds": 30,
+    "advertised_head_differs_from_final_head": true,
+    "disposition_head_differs_from_final_head": true,
+    "qualifying_exact_head_approval_count": 0,
+    "qualifying_exact_head_disposition_count": 0,
+    "historical_timeline_rewritten": false
+  },
+  "remedy_contract": {
+    "historical_state_rewritten": false,
+    "required_review_event": "APPROVED",
+    "corrective_reviewer_must_be_non_author": true,
+    "corrective_reviewer_must_be_maintainer": true,
+    "review_must_target_corrective_pr_final_head": true,
+    "comment_is_substitute": false,
+    "reaction_is_substitute": false,
+    "merge_action_is_substitute": false,
+    "author_self_review_is_substitute": false,
+    "protected_merge_required": true,
+    "prospective_remediation_only": true,
+    "fixture_005_blocked_until_remedy_merge": true
+  },
+  "authority_boundary": {
+    "project_owner": "grandchallenge",
+    "project_scope": "gcl_contained",
+    "implementation_changed": false,
+    "fixture_data_changed": false,
+    "external_project_dependency": false,
+    "aether_role": "future_projection_nonblocking"
+  },
+  "claim_boundary": {
+    "records_deleted": false,
+    "records_suppressed": false,
+    "canonical_member_selected": false,
+    "corpus_admitted": false,
+    "dataset_quality_proved": false,
+    "equivalence_proved": false,
+    "train_test_contamination_absent": false,
+    "privacy_compliance_proved": false,
+    "legality_proved": false,
+    "fitness_for_training_proved": false,
+    "production_release_authorized": false,
+    "downstream_improvement_proved": false,
+    "novelty_or_priority_claimed": false,
+    "commercial_claim_authorized": false
+  }
+}

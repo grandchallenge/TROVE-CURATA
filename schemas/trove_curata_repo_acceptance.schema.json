@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/trove_curata_repo_acceptance.schema.json",
+  "title": "TROVE-CURATA repository bootstrap acceptance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "acceptance_id",
+    "status",
+    "source",
+    "destination",
+    "imported_artifact_count",
+    "imported_artifacts",
+    "imported_mapping_sha256",
+    "bootstrap_roots",
+    "review_remedies",
+    "replay_contract",
+    "activation_contract",
+    "authority_boundary",
+    "claim_boundary",
+    "acceptance_record_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "acceptance_id": {"const": "TC-REPO-ACCEPT-001"},
+    "status": {"const": "prepared_pending_source_protected_merge_and_two_sided_readback"},
+    "source": {"type": "object"},
+    "destination": {"type": "object"},
+    "imported_artifact_count": {"const": 92},
+    "imported_artifacts": {
+      "type": "array",
+      "minItems": 92,
+      "maxItems": 92,
+      "items": {"$ref": "#/$defs/importedArtifact"}
+    },
+    "imported_mapping_sha256": {"$ref": "#/$defs/sha256"},
+    "bootstrap_roots": {"type": "object"},
+    "review_remedies": {"type": "object"},
+    "replay_contract": {"type": "object"},
+    "activation_contract": {"type": "object"},
+    "authority_boundary": {"type": "object"},
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": {"const": false},
+      "minProperties": 18,
+      "maxProperties": 18
+    },
+    "acceptance_record_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "gitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "importedArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_path", "destination_path", "blob_sha", "size"],
+      "properties": {
+        "source_path": {"type": "string", "minLength": 1},
+        "destination_path": {"type": "string", "pattern": "^bootstrap/intellect-snapshot/"},
+        "blob_sha": {"$ref": "#/$defs/gitSha"},
+        "size": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

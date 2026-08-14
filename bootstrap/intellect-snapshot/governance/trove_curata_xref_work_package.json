@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.2.0",
+  "work_package_id": "TROVE-CURATA-XREF-WP00",
+  "status": "implemented",
+  "authority": {
+    "project_owner": "grandchallenge",
+    "governance_repository": "grandchallenge/INTELLECT",
+    "bootstrap_implementation_repository": "grandchallenge/INTELLECT",
+    "project_scope": "gcl_contained",
+    "external_project_dependency": false,
+    "external_repositories_role": "reference_only_non_authoritative",
+    "current_operational_authority": "github",
+    "aether_role": "future_projection_nonblocking"
+  },
+  "dependency_policy": {
+    "external_project_repository_dependencies_allowed": false,
+    "pinned_open_source_providers_allowed": true,
+    "providers_have_policy_authority": false,
+    "fixture_replay_requires_network": false,
+    "future_dedicated_repository_required_for_wp00": false
+  },
+  "record_contracts": [
+    "trove_source_record",
+    "curata_transformation_receipt",
+    "curata_passport",
+    "trove_release_manifest"
+  ],
+  "review_tiers": {
+    "T0": "editorial_or_nonsemantic",
+    "T1": "deterministic_transformation",
+    "T2": "judgment_or_retention_policy",
+    "T3": "corpus_admission_or_high_impact_policy"
+  },
+  "provider_decisions": [
+    {
+      "capability": "intellect_work_package_lifecycle",
+      "decision": "generalize",
+      "authority_effect": "gcl_side_only"
+    },
+    {
+      "capability": "aether_provenance_projection",
+      "decision": "defer",
+      "authority_effect": "future_projection_only"
+    },
+    {
+      "capability": "gcl_ghos_repository_controls",
+      "decision": "reuse_directly",
+      "authority_effect": "gcl_side_only"
+    },
+    {
+      "capability": "mathforge_source_locks_and_provider_manifests",
+      "decision": "generalize",
+      "authority_effect": "gcl_side_only"
+    },
+    {
+      "capability": "math_programme_artifact_authority_and_claim_ledgers",
+      "decision": "generalize",
+      "authority_effect": "gcl_side_only"
+    },
+    {
+      "capability": "mathcert_intake_replay_qualification_separation",
+      "decision": "adapt_locally",
+      "authority_effect": "gcl_side_only"
+    },
+    {
+      "capability": "css_adversarial_fixtures",
+      "decision": "reuse_directly",
+      "authority_effect": "none"
+    },
+    {
+      "capability": "align_matched_comparisons",
+      "decision": "reuse_directly",
+      "authority_effect": "none"
+    },
+    {
+      "capability": "modulus_intervention_telemetry",
+      "decision": "adapt_locally",
+      "authority_effect": "none"
+    },
+    {
+      "capability": "mathsolve_mathematical_routing",
+      "decision": "reject",
+      "authority_effect": "none"
+    }
+  ],
+  "fixture": {
+    "fixture_id": "TC-FIXTURE-001",
+    "source_family": "html",
+    "fixture_bytes_authority": "gcl_retained",
+    "execution_provider": "daft",
+    "extractor": "trafilatura",
+    "synthetic_content_allowed": false,
+    "network_required_for_replay": false
+  },
+  "claim_boundary": {
+    "dataset_quality_proved": false,
+    "privacy_proved": false,
+    "legality_proved": false,
+    "safety_proved": false,
+    "fitness_for_training_proved": false,
+    "downstream_improvement_proved": false,
+    "external_project_conformance_claimed": false,
+    "commercial_claim_authorized": false
+  }
+}

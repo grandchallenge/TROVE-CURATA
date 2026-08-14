@@ -1,0 +1,85 @@
+name: TROVE-CURATA quality fixture
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/trove-curata-quality-fixture.yml"
+      - "src/grand_intellect/trove_curata_quality_*.py"
+      - "tests/test_trove_curata_quality_*.py"
+      - "fixtures/trove_curata/TC-FIXTURE-001/**"
+      - "fixtures/trove_curata/TC-FIXTURE-002/**"
+      - "fixtures/trove_curata/TC-FIXTURE-003/**"
+      - "fixtures/trove_curata/TC-FIXTURE-004/**"
+      - "fixtures/trove_curata/TC-FIXTURE-005/**"
+      - "schemas/trove_curata_quality_fixture_report.schema.json"
+      - "docs/TC_FIXTURE_005.md"
+  pull_request:
+    paths:
+      - ".github/workflows/trove-curata-quality-fixture.yml"
+      - "src/grand_intellect/trove_curata_quality_*.py"
+      - "tests/test_trove_curata_quality_*.py"
+      - "fixtures/trove_curata/TC-FIXTURE-001/**"
+      - "fixtures/trove_curata/TC-FIXTURE-002/**"
+      - "fixtures/trove_curata/TC-FIXTURE-003/**"
+      - "fixtures/trove_curata/TC-FIXTURE-004/**"
+      - "fixtures/trove_curata/TC-FIXTURE-005/**"
+      - "schemas/trove_curata_quality_fixture_report.schema.json"
+      - "docs/TC_FIXTURE_005.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: trove-curata-quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TC001: fixtures/trove_curata/TC-FIXTURE-001/manifest.json
+  TC002: fixtures/trove_curata/TC-FIXTURE-002/manifest.json
+  TC003: fixtures/trove_curata/TC-FIXTURE-003/manifest.json
+  TC004: fixtures/trove_curata/TC-FIXTURE-004/manifest.json
+  TC005: fixtures/trove_curata/TC-FIXTURE-005/manifest.json
+  DO_NOT_TRACK: "true"
+
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.11.14"
+          cache: pip
+          cache-dependency-path: |
+            requirements-ci.txt
+            requirements-trove-curata.txt
+            requirements-trove-curata-pii.txt
+            requirements-trove-curata-transform.txt
+            requirements-trove-curata-duplicate.txt
+      - name: Install locked predecessor providers
+        run: python -m pip install -r requirements-ci.txt -r requirements-trove-curata.txt -r requirements-trove-curata-pii.txt -r requirements-trove-curata-transform.txt -r requirements-trove-curata-duplicate.txt
+      - name: Install package without build isolation
+        run: python -m pip install --no-build-isolation --no-deps -e .
+      - name: Compile Fixture 005
+        run: python -m compileall -q src/grand_intellect/trove_curata_quality_fixture.py tests/test_trove_curata_quality_fixture.py
+      - name: Run Fixture 005 mutation tests
+        run: python -m unittest discover -s tests -p "test_trove_curata_quality_*.py" -v
+      - name: Replay predecessor extraction
+        run: python -m grand_intellect.trove_curata_fixture --manifest "$TC001" --output /tmp/tc001.json
+      - name: Replay predecessor PII observation
+        run: python -m grand_intellect.trove_curata_pii_fixture --manifest "$TC002" --output /tmp/tc002.json
+      - name: Replay predecessor transformation
+        run: python -m grand_intellect.trove_curata_transform_fixture --manifest "$TC003" --output /tmp/tc003.json
+      - name: Replay predecessor duplicate observation
+        run: python -m grand_intellect.trove_curata_duplicate_fixture --manifest "$TC004" --output /tmp/tc004.json
+      - name: Execute first quality-observation replay
+        run: python -m grand_intellect.trove_curata_quality_fixture --manifest "$TC005" --output /tmp/tc005-first.json
+      - name: Execute independent second quality-observation replay
+        run: python -m grand_intellect.trove_curata_quality_fixture --manifest "$TC005" --output /tmp/tc005-second.json
+      - name: Compare deterministic reports
+        run: cmp /tmp/tc005-first.json /tmp/tc005-second.json

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/trove_curata_transform_fixture_report.schema.json",
+  "title": "TC-FIXTURE-003 governed transformation report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","fixture_id","predecessor","configuration","configuration_sha256","case_count","cases","duplicate_checks","claims","passed"],
+  "properties": {
+    "schema_version":{"const":"0.1.0"},
+    "fixture_id":{"const":"TC-FIXTURE-003"},
+    "predecessor":{"$ref":"#/$defs/predecessor"},
+    "configuration":{"$ref":"#/$defs/configuration"},
+    "configuration_sha256":{"$ref":"#/$defs/digest"},
+    "case_count":{"type":"integer","minimum":1},
+    "cases":{"type":"array","items":{"$ref":"#/$defs/case"}},
+    "duplicate_checks":{"type":"array","items":{"$ref":"#/$defs/duplicate"}},
+    "claims":{"type":"object","additionalProperties":{"const":false}},
+    "passed":{"type":"boolean"}
+  },
+  "$defs": {
+    "digest":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "predecessor":{"type":"object","additionalProperties":false,"required":["fixture_id","pull_request","exact_merged_head","protected_merge"],"properties":{"fixture_id":{"const":"TC-FIXTURE-002"},"pull_request":{"const":30},"exact_merged_head":{"$ref":"#/$defs/digest"},"protected_merge":{"$ref":"#/$defs/digest"}}},
+    "configuration":{"type":"object","additionalProperties":false,"required":["fixture_id","schema_version","predecessor","providers","plan_authority","fragment_scoped_provider_execution","gcl_output_assembly","source_records_immutable","external_project_dependency","network_required_for_replay"],"properties":{"fixture_id":{"const":"TC-FIXTURE-003"},"schema_version":{"const":"0.1.0"},"predecessor":{"$ref":"#/$defs/predecessor"},"providers":{"type":"object","additionalProperties":{"type":"string"}},"plan_authority":{"const":"gcl_owned_static_manifest"},"fragment_scoped_provider_execution":{"const":true},"gcl_output_assembly":{"const":true},"source_records_immutable":{"const":true},"external_project_dependency":{"const":false},"network_required_for_replay":{"const":false}}},
+    "operation":{"type":"object","additionalProperties":false,"required":["observation_id","entity_type","start_char","end_char","operator","parameters","matched_text"],"properties":{"observation_id":{"type":"string"},"entity_type":{"type":"string"},"start_char":{"type":"integer"},"end_char":{"type":"integer"},"operator":{"type":"string"},"parameters":{"type":"object"},"matched_text":{"type":"string"}}},
+    "result":{"type":"object","additionalProperties":false,"required":["observation_id","entity_type","start_char","end_char","operator","parameters","source_fragment_sha256","output_fragment","output_fragment_sha256"],"properties":{"observation_id":{"type":"string"},"entity_type":{"type":"string"},"start_char":{"type":"integer"},"end_char":{"type":"integer"},"operator":{"type":"string"},"parameters":{"type":"object"},"source_fragment_sha256":{"$ref":"#/$defs/digest"},"output_fragment":{"type":"string"},"output_fragment_sha256":{"$ref":"#/$defs/digest"}}},
+    "output":{"type":"object","additionalProperties":false,"required":["record_type","output_record_id","source_sha256","output_sha256","byte_length","engine","source_record_mutated","admission_state","deletion_state"],"properties":{"record_type":{"const":"curata_derived_output"},"output_record_id":{"type":"string"},"source_sha256":{"$ref":"#/$defs/digest"},"output_sha256":{"$ref":"#/$defs/digest"},"byte_length":{"type":"integer"},"engine":{"type":"string"},"source_record_mutated":{"const":false},"admission_state":{"const":"not_admitted"},"deletion_state":{"const":"not_deleted"}}},
+    "case":{"type":"object","additionalProperties":false,"required":["case_id","case_class","predecessor_case_id","predecessor_context","plan_record","provider_operation_results","baseline_operation_results","provider_output","baseline_output","provider_output_record","baseline_output_record","residual_audit","transformation_receipt","routing_record","checks","passed"],"properties":{"case_id":{"type":"string"},"case_class":{"type":"string"},"predecessor_case_id":{"type":"string"},"predecessor_context":{"type":"object","additionalProperties":false,"required":["source_sha256","canonical_observation_digest","provider_observation_digest","baseline_observation_digest"],"properties":{"source_sha256":{"$ref":"#/$defs/digest"},"canonical_observation_digest":{"$ref":"#/$defs/digest"},"provider_observation_digest":{"$ref":"#/$defs/digest"},"baseline_observation_digest":{"$ref":"#/$defs/digest"}}},"plan_record":{"type":"object","additionalProperties":false,"required":["record_type","plan_id","plan_state","status","binding","resolved_operations","plan_authority"],"properties":{"record_type":{"const":"curata_transformation_plan"},"plan_id":{"type":"string"},"plan_state":{"type":"string"},"status":{"type":"string"},"binding":{"type":"object"},"resolved_operations":{"type":"array","items":{"$ref":"#/$defs/operation"}},"plan_authority":{"const":"grandchallenge"}}},"provider_operation_results":{"type":"array","items":{"$ref":"#/$defs/result"}},"baseline_operation_results":{"type":"array","items":{"$ref":"#/$defs/result"}},"provider_output":{"type":"string"},"baseline_output":{"type":"string"},"provider_output_record":{"$ref":"#/$defs/output"},"baseline_output_record":{"$ref":"#/$defs/output"},"residual_audit":{"type":"object"},"transformation_receipt":{"type":"object"},"routing_record":{"type":"object"},"checks":{"type":"object","additionalProperties":{"type":"boolean"}},"passed":{"type":"boolean"}}},
+    "duplicate":{"type":"object","additionalProperties":false,"required":["duplicate_group","members","source_digest_equal","plan_digest_equal","output_digest_equal","receipt_digest_equal"],"properties":{"duplicate_group":{"type":"string"},"members":{"type":"array","items":{"type":"string"}},"source_digest_equal":{"type":"boolean"},"plan_digest_equal":{"type":"boolean"},"output_digest_equal":{"type":"boolean"},"receipt_digest_equal":{"type":"boolean"}}}
+  }
+}

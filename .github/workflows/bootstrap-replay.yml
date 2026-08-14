@@ -1,0 +1,67 @@
+name: TROVE-CURATA bootstrap replay
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: trove-curata-bootstrap-replay-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      SNAPSHOT: bootstrap/intellect-snapshot
+      PYTHONPATH: bootstrap/intellect-snapshot/src
+      DAFT_TELEMETRY_DISABLED: "1"
+      DO_NOT_TRACK: "1"
+      TC001: bootstrap/intellect-snapshot/fixtures/trove_curata/TC-FIXTURE-001/manifest.json
+      TC002: bootstrap/intellect-snapshot/fixtures/trove_curata/TC-FIXTURE-002/manifest.json
+      TC003: bootstrap/intellect-snapshot/fixtures/trove_curata/TC-FIXTURE-003/manifest.json
+      TC004: bootstrap/intellect-snapshot/fixtures/trove_curata/TC-FIXTURE-004/manifest.json
+      TC005: bootstrap/intellect-snapshot/fixtures/trove_curata/TC-FIXTURE-005/manifest.json
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.11.14"
+      - name: Install exact bootstrap providers
+        run: >-
+          python -m pip install
+          -r "$SNAPSHOT/requirements-trove-curata.txt"
+          -r "$SNAPSHOT/requirements-trove-curata-pii.txt"
+          -r "$SNAPSHOT/requirements-trove-curata-transform.txt"
+          -r "$SNAPSHOT/requirements-trove-curata-duplicate.txt"
+      - name: Validate imported blob equivalence
+        run: python scripts/validate_bootstrap_acceptance.py governance/trove_curata_repo_acceptance.json > /tmp/acceptance.json
+      - name: Compile imported bootstrap
+        run: python -m compileall -q "$SNAPSHOT/src" "$SNAPSHOT/tests"
+      - name: Run imported TROVE-CURATA tests
+        run: python -m unittest discover -s "$SNAPSHOT/tests" -p "test_trove_curata*.py" -v
+      - name: Replay Fixtures 001 through 004
+        run: |
+          python -m grand_intellect.trove_curata_fixture --manifest "$TC001" --output /tmp/tc001.json
+          python -m grand_intellect.trove_curata_pii_fixture --manifest "$TC002" --output /tmp/tc002.json
+          python -m grand_intellect.trove_curata_transform_fixture --manifest "$TC003" --output /tmp/tc003.json
+          python -m grand_intellect.trove_curata_duplicate_fixture --manifest "$TC004" --output /tmp/tc004.json
+      - name: Replay Fixture 005 twice
+        run: |
+          python -m grand_intellect.trove_curata_quality_fixture --manifest "$TC005" --output /tmp/tc005-a.json
+          python -m grand_intellect.trove_curata_quality_fixture --manifest "$TC005" --output /tmp/tc005-b.json
+          cmp /tmp/tc005-a.json /tmp/tc005-b.json
+      - name: Bind exact replay report identities
+        run: |
+          echo "796da735806ecdeb84e83481c9b0dfed187b1fc0d68054744284839e6180e091  /tmp/tc001.json" | sha256sum -c -
+          echo "e31946855b4c3f67e43277586adce337716642e5a9b6bd37244b63b678ca1d58  /tmp/tc002.json" | sha256sum -c -
+          echo "f3b52e9ffe77f27bf37355f31a441e7096c9bf2b4684db4aae5b440580aac4d5  /tmp/tc003.json" | sha256sum -c -
+          echo "e54958a4e09b536795dde271486d4f32212f80c3168abb0b7b788ec52323ea13  /tmp/tc004.json" | sha256sum -c -
+          echo "2b6633a0174c57953637ad53b3c92e213d9a688180df8e0f0a13ac6486fbcae4  /tmp/tc005-a.json" | sha256sum -c -
