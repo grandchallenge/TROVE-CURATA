@@ -1,0 +1,6 @@
+* @grandchallenge/amanuensis
+/.github/ @grandchallenge/security @grandchallenge/amanuensis
+/governance/ @grandchallenge/the-council @grandchallenge/referees @grandchallenge/amanuensis
+/schemas/ @grandchallenge/the-council @grandchallenge/referees @grandchallenge/amanuensis
+/scripts/ @grandchallenge/amanuensis @grandchallenge/referees
+/bootstrap/intellect-snapshot/ @grandchallenge/the-council @grandchallenge/referees @grandchallenge/amanuensis
