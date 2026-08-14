@@ -13,7 +13,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_MAPPING_SHA256 = "52a5c0d534d281ff8c562a6f8ca2321e337d183e868ad328a87eec6605fe0b45"
-EXPECTED_RECORD_SHA256 = "e5324f9cbfd596e12436d64d6c9c9e74d48017ec83a75490bf122737238bf1b9"
+EXPECTED_RECORD_SHA256 = "191c89d43e7de97cc39fcdc94d7cc4e6e15acc5e76114fe572a52f04c83f5164"
 EXPECTED_SOURCE_CLOSURE_CANONICAL_SHA256 = "ec871730221523a55e09c81b7e81d785284e4b181ec84ac65480962c9f8dee27"
 
 ROOT_FIELDS = {
@@ -91,7 +91,7 @@ def validate_bootstrap_acceptance(record: dict[str, Any], root: Path = ROOT) -> 
         == {
             "repository": "grandchallenge/TROVE-CURATA",
             "issue_number": 1,
-            "expected_pull_request_number": 2,
+            "expected_pull_request_number": 1,
             "holding_main_head": "f9e5dafbda1c409fd416daca46a2f197b5e59034",
             "holding_main_is_authority_source": False,
             "candidate_branch": "agent/tc-repo-accept-001",

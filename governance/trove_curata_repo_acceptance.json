@@ -1,6 +1,6 @@
 {
   "acceptance_id": "TC-REPO-ACCEPT-001",
-  "acceptance_record_sha256": "e5324f9cbfd596e12436d64d6c9c9e74d48017ec83a75490bf122737238bf1b9",
+  "acceptance_record_sha256": "191c89d43e7de97cc39fcdc94d7cc4e6e15acc5e76114fe572a52f04c83f5164",
   "activation_contract": {
     "activation_created_by_this_record": false,
     "destination_protected_merge_required": true,
@@ -51,7 +51,7 @@
     "activation_state": "not_active",
     "candidate_branch": "agent/tc-repo-accept-001",
     "canonical_from": "TC-FIXTURE-006",
-    "expected_pull_request_number": 2,
+    "expected_pull_request_number": 1,
     "holding_main_head": "f9e5dafbda1c409fd416daca46a2f197b5e59034",
     "holding_main_is_authority_source": false,
     "issue_number": 1,

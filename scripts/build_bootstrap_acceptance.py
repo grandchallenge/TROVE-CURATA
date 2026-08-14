@@ -85,7 +85,7 @@ def build_record() -> dict[str, object]:
         "destination": {
             "repository": "grandchallenge/TROVE-CURATA",
             "issue_number": 1,
-            "expected_pull_request_number": 2,
+            "expected_pull_request_number": 1,
             "holding_main_head": "f9e5dafbda1c409fd416daca46a2f197b5e59034",
             "holding_main_is_authority_source": False,
             "candidate_branch": "agent/tc-repo-accept-001",
