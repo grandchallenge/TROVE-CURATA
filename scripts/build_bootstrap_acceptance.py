@@ -64,7 +64,7 @@ def build_record() -> dict[str, object]:
         )
 
     record: dict[str, object] = {
-        "schema_version": "0.1.0",
+        "schema_version": "0.2.0",
         "acceptance_id": "TC-REPO-ACCEPT-001",
         "status": "prepared_pending_destination_protected_merge_and_two_sided_readback",
         "source": {
@@ -121,6 +121,27 @@ def build_record() -> dict[str, object]:
             "source_and_destination_records_must_cross_bind": True,
             "activation_created_by_this_record": False,
             "fixture_006_may_begin": False,
+        },
+        "operating_authority": {
+            "repository": "grandchallenge/INTELLECT",
+            "protected_head": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+            "schedule_path": "governance/constitutional_authority_schedule.json",
+            "schedule_blob_sha": "6f66ed27ed7ff2889e4dd67c34973c8fa2f798a8",
+            "schedule_schema_version": "1.5.0",
+            "directive_id": "GI-STEWARD-0002",
+            "directive_path": "governance/steward_directives/GI-STEWARD-0002.md",
+            "directive_blob_sha": "9c70ad6b9c0100ab571a59605de0531c23cd25d6",
+            "ordinary_human_steward": "fyremael",
+            "recovery_owner": "jimsteeg",
+            "mandatory_routine_reviewers": [],
+            "human_actions_per_governed_decision_target": 1,
+            "non_author_agent_adversary_required": True,
+            "distinct_non_author_agent_referee_required": True,
+            "distinct_agent_sessions_required": True,
+            "github_approval_is_human_steward_authorization": False,
+            "mechanical_merge_is_human_steward_authorization": False,
+            "recovery_owner_required_for_routine_merge": False,
+            "agent_may_merge_own_work": False,
         },
         "authority_boundary": {
             "project_owner": "grandchallenge",

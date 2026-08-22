@@ -2,7 +2,7 @@
 
 ## Status
 
-Prepared for exact-head T3 review. The destination remains inactive.
+Prepared for exact-head T3 review under the effective `GI-STEWARD-0002` minimum-human-action policy. The destination remains inactive.
 
 ## Purpose
 
@@ -27,6 +27,12 @@ The acceptance package binds:
 - the Fixture 003 and Fixture 004 review defects and prospective remedies.
 
 INTELLECT PR 69 was protected-merged as `041f7d9b1c85e157a651bcf3edf07c7499185b00`. The merge binds the exact reviewed source candidate `d587996f71a38aeb8ce4a0c667da1a8350b7f153` to protected predecessor `8c3da17b2c401944e43b6e9bb0fae3bc95b05624` with tree `27539df4924775abf5a841b7591aaaa38223d672`. Source closure is complete; destination acceptance remains pending exact-head review, protected destination merge and two-sided readback.
+
+## T3 staffing and execution
+
+The destination acceptance packet projects the effective protected INTELLECT authority schedule at `041f7d9b1c85e157a651bcf3edf07c7499185b00`. It requires exact-revision findings from a non-author agent Adversary and a different non-author agent Referee in a distinct session, followed by one authenticated exact-head disposition from ordinary Human Steward `fyremael`.
+
+There are no mandatory routine human reviewers. Recovery owner `jimsteeg` may participate only for an exact recovery operation or when separately named as an optional bounded reviewer; that participation is not a routine merge prerequisite. A GitHub approval and a mechanical merge click do not substitute for the Human Steward disposition. Once the exact-head gate is complete, a non-author executor may mechanically perform the expected-head protected merge. An agent that authored candidate bytes may not approve, independently review or merge those bytes.
 
 ## Immutable import
 

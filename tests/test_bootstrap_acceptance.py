@@ -144,6 +144,38 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             "premature fixture 006 authority",
         )
 
+    def test_routine_human_reviewer_cannot_be_added(self) -> None:
+        self.reject(
+            lambda record: record["operating_authority"].update(
+                {"mandatory_routine_reviewers": ["jimsteeg"]}
+            ),
+            "operating authority drift",
+        )
+
+    def test_recovery_owner_cannot_become_routine_merger(self) -> None:
+        self.reject(
+            lambda record: record["operating_authority"].update(
+                {"recovery_owner_required_for_routine_merge": True}
+            ),
+            "operating authority drift",
+        )
+
+    def test_github_approval_cannot_substitute_for_steward_authorization(self) -> None:
+        self.reject(
+            lambda record: record["operating_authority"].update(
+                {"github_approval_is_human_steward_authorization": True}
+            ),
+            "operating authority drift",
+        )
+
+    def test_agent_cannot_merge_own_work(self) -> None:
+        self.reject(
+            lambda record: record["operating_authority"].update(
+                {"agent_may_merge_own_work": True}
+            ),
+            "operating authority drift",
+        )
+
     def test_provider_admission_authority_rejected(self) -> None:
         self.reject(
             lambda record: record["authority_boundary"].update(

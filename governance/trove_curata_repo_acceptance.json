@@ -1,6 +1,6 @@
 {
   "acceptance_id": "TC-REPO-ACCEPT-001",
-  "acceptance_record_sha256": "2858f68bcba9259f993640ba9a55137aec177501fd1c8edbf40082bb1a035df3",
+  "acceptance_record_sha256": "2e4cf8154451b598c7bddeb27ff43d1acdf77bd77561d7fd7128dcb5ee0a1526",
   "activation_contract": {
     "activation_created_by_this_record": false,
     "destination_protected_merge_required": true,
@@ -614,6 +614,27 @@
     }
   ],
   "imported_mapping_sha256": "52a5c0d534d281ff8c562a6f8ca2321e337d183e868ad328a87eec6605fe0b45",
+  "operating_authority": {
+    "agent_may_merge_own_work": false,
+    "directive_blob_sha": "9c70ad6b9c0100ab571a59605de0531c23cd25d6",
+    "directive_id": "GI-STEWARD-0002",
+    "directive_path": "governance/steward_directives/GI-STEWARD-0002.md",
+    "distinct_agent_sessions_required": true,
+    "distinct_non_author_agent_referee_required": true,
+    "github_approval_is_human_steward_authorization": false,
+    "human_actions_per_governed_decision_target": 1,
+    "mandatory_routine_reviewers": [],
+    "mechanical_merge_is_human_steward_authorization": false,
+    "non_author_agent_adversary_required": true,
+    "ordinary_human_steward": "fyremael",
+    "protected_head": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+    "recovery_owner": "jimsteeg",
+    "recovery_owner_required_for_routine_merge": false,
+    "repository": "grandchallenge/INTELLECT",
+    "schedule_blob_sha": "6f66ed27ed7ff2889e4dd67c34973c8fa2f798a8",
+    "schedule_path": "governance/constitutional_authority_schedule.json",
+    "schedule_schema_version": "1.5.0"
+  },
   "replay_contract": {
     "byte_identical_fixture_005_reports_required": true,
     "expected_report_sha256": {
@@ -647,7 +668,7 @@
       "prospective_remedy_record": "TC-FIXTURE-004-REVIEW-REMEDY-001"
     }
   },
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "source": {
     "artifact_inventory_sha256": "ad2803363071e7402cdaa48b3d39062a0efcaac2e53eac69ab76a93001484d6d",
     "candidate_head": "d587996f71a38aeb8ce4a0c667da1a8350b7f153",
