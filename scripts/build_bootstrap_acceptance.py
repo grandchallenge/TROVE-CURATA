@@ -66,7 +66,7 @@ def build_record() -> dict[str, object]:
     record: dict[str, object] = {
         "schema_version": "0.1.0",
         "acceptance_id": "TC-REPO-ACCEPT-001",
-        "status": "prepared_pending_source_protected_merge_and_two_sided_readback",
+        "status": "prepared_pending_destination_protected_merge_and_two_sided_readback",
         "source": {
             "repository": "grandchallenge/INTELLECT",
             "issue_number": 68,
@@ -75,8 +75,8 @@ def build_record() -> dict[str, object]:
             "candidate_tree": "27539df4924775abf5a841b7591aaaa38223d672",
             "protected_snapshot_head": closure["source"]["protected_head_at_preparation"],
             "protected_snapshot_tree": closure["source"]["protected_tree_at_preparation"],
-            "protected_source_closure_merge": None,
-            "source_closure_status": "review_ready_not_protected",
+            "protected_source_closure_merge": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+            "source_closure_status": "protected",
             "closure_record_canonical_sha256": closure["closure_record_sha256"],
             "closure_record_file_sha256": "ec55bb8fe7b8235d880bea80995dbcffa2520c047b758363e7afe90c33802653",
             "closure_record_blob_sha": "ebb2e6c470748bb58daed0eff0b9af1e553c9c1a",

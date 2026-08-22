@@ -43,10 +43,18 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             "source binding drift",
         )
 
-    def test_source_cannot_be_prematurely_marked_protected(self) -> None:
+    def test_source_protected_merge_identity_cannot_drift(self) -> None:
         self.reject(
             lambda record: record["source"].update(
-                {"source_closure_status": "protected", "protected_source_closure_merge": "0" * 40}
+                {"protected_source_closure_merge": "0" * 40}
+            ),
+            "source binding drift",
+        )
+
+    def test_source_cannot_be_downgraded_after_protected_merge(self) -> None:
+        self.reject(
+            lambda record: record["source"].update(
+                {"source_closure_status": "review_ready_not_protected"}
             ),
             "source binding drift",
         )

@@ -13,7 +13,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_MAPPING_SHA256 = "52a5c0d534d281ff8c562a6f8ca2321e337d183e868ad328a87eec6605fe0b45"
-EXPECTED_RECORD_SHA256 = "191c89d43e7de97cc39fcdc94d7cc4e6e15acc5e76114fe572a52f04c83f5164"
+EXPECTED_RECORD_SHA256 = "2858f68bcba9259f993640ba9a55137aec177501fd1c8edbf40082bb1a035df3"
 EXPECTED_SOURCE_CLOSURE_CANONICAL_SHA256 = "ec871730221523a55e09c81b7e81d785284e4b181ec84ac65480962c9f8dee27"
 
 ROOT_FIELDS = {
@@ -60,7 +60,7 @@ def validate_bootstrap_acceptance(record: dict[str, Any], root: Path = ROOT) -> 
     require(record["schema_version"] == "0.1.0", "schema version drift")
     require(record["acceptance_id"] == "TC-REPO-ACCEPT-001", "acceptance identity drift")
     require(
-        record["status"] == "prepared_pending_source_protected_merge_and_two_sided_readback",
+        record["status"] == "prepared_pending_destination_protected_merge_and_two_sided_readback",
         "acceptance status drift",
     )
 
@@ -75,8 +75,8 @@ def validate_bootstrap_acceptance(record: dict[str, Any], root: Path = ROOT) -> 
             "candidate_tree": "27539df4924775abf5a841b7591aaaa38223d672",
             "protected_snapshot_head": "8c3da17b2c401944e43b6e9bb0fae3bc95b05624",
             "protected_snapshot_tree": "9d1f2d2b821a3398e8895b75f8badebc2fb6a059",
-            "protected_source_closure_merge": None,
-            "source_closure_status": "review_ready_not_protected",
+            "protected_source_closure_merge": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+            "source_closure_status": "protected",
             "closure_record_canonical_sha256": EXPECTED_SOURCE_CLOSURE_CANONICAL_SHA256,
             "closure_record_file_sha256": "ec55bb8fe7b8235d880bea80995dbcffa2520c047b758363e7afe90c33802653",
             "closure_record_blob_sha": "ebb2e6c470748bb58daed0eff0b9af1e553c9c1a",

@@ -1,6 +1,6 @@
 {
   "acceptance_id": "TC-REPO-ACCEPT-001",
-  "acceptance_record_sha256": "191c89d43e7de97cc39fcdc94d7cc4e6e15acc5e76114fe572a52f04c83f5164",
+  "acceptance_record_sha256": "2858f68bcba9259f993640ba9a55137aec177501fd1c8edbf40082bb1a035df3",
   "activation_contract": {
     "activation_created_by_this_record": false,
     "destination_protected_merge_required": true,
@@ -658,10 +658,10 @@
     "issue_number": 68,
     "protected_snapshot_head": "8c3da17b2c401944e43b6e9bb0fae3bc95b05624",
     "protected_snapshot_tree": "9d1f2d2b821a3398e8895b75f8badebc2fb6a059",
-    "protected_source_closure_merge": null,
+    "protected_source_closure_merge": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
     "pull_request_number": 69,
     "repository": "grandchallenge/INTELLECT",
-    "source_closure_status": "review_ready_not_protected"
+    "source_closure_status": "protected"
   },
-  "status": "prepared_pending_source_protected_merge_and_two_sided_readback"
+  "status": "prepared_pending_destination_protected_merge_and_two_sided_readback"
 }

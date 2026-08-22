@@ -26,7 +26,7 @@ The acceptance package binds:
 - the source fixture, schema and workflow roots;
 - the Fixture 003 and Fixture 004 review defects and prospective remedies.
 
-The source PR is not yet protected. Consequently, destination acceptance remains pending even if this package passes review.
+INTELLECT PR 69 was protected-merged as `041f7d9b1c85e157a651bcf3edf07c7499185b00`. The merge binds the exact reviewed source candidate `d587996f71a38aeb8ce4a0c667da1a8350b7f153` to protected predecessor `8c3da17b2c401944e43b6e9bb0fae3bc95b05624` with tree `27539df4924775abf5a841b7591aaaa38223d672`. Source closure is complete; destination acceptance remains pending exact-head review, protected destination merge and two-sided readback.
 
 ## Immutable import
 

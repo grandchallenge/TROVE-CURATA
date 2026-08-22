@@ -24,7 +24,7 @@
   "properties": {
     "schema_version": {"const": "0.1.0"},
     "acceptance_id": {"const": "TC-REPO-ACCEPT-001"},
-    "status": {"const": "prepared_pending_source_protected_merge_and_two_sided_readback"},
+    "status": {"const": "prepared_pending_destination_protected_merge_and_two_sided_readback"},
     "source": {"type": "object"},
     "destination": {"type": "object"},
     "imported_artifact_count": {"const": 92},
