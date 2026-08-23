@@ -14,7 +14,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_MAPPING_SHA256 = "52a5c0d534d281ff8c562a6f8ca2321e337d183e868ad328a87eec6605fe0b45"
-EXPECTED_RECORD_SHA256 = "b87fc7ea4771947eda954abd7c8f6babc558fd1972b86fffef05276b20cd2cbb"
+EXPECTED_RECORD_SHA256 = "c12e23d789d0f6e58d3b6dff17662c0d61d21794b4e997f56e888bfe7f32ddf7"
 EXPECTED_SOURCE_CLOSURE_CANONICAL_SHA256 = "ec871730221523a55e09c81b7e81d785284e4b181ec84ac65480962c9f8dee27"
 
 ROOT_FIELDS = {
@@ -163,7 +163,12 @@ def validate_bootstrap_acceptance(record: dict[str, Any], root: Path = ROOT) -> 
                 "protected_merge_second_parent_is_authorized_candidate": True,
                 "protected_main_readback": True,
                 "historical_t3_gate_satisfied": False,
+                "github_merged_by": "fyremael",
+                "github_merged_by_is_executor_session_identity": False,
                 "prospective_remedy_protected": True,
+                "mechanical_executor_non_author": True,
+                "mechanical_executor_receipt_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383546879",
+                "mechanical_executor_session": "01a02c12-1dd9-7e32-a30a-cdf4a82bb609",
                 "remedy_record_path": "governance/trove_curata_bootstrap_close_001_t3_review_remedy.json",
                 "remedy_record_blob_sha": "ac7dadc7db8f1d7ee78dd906bba864a069df1751",
                 "schema_path": "schemas/trove_curata_bootstrap_close_001_t3_review_remedy.schema.json",

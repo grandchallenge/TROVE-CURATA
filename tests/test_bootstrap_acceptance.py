@@ -146,6 +146,20 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             "source review remedy binding drift",
         )
 
+    def test_source_review_remedy_executor_receipt_is_exact(self) -> None:
+        mutations = (
+            {"mechanical_executor_non_author": False},
+            {"mechanical_executor_session": "primary-author-session"},
+            {"github_merged_by_is_executor_session_identity": True},
+            {"mechanical_executor_receipt_url": "https://example.invalid/receipt"},
+        )
+        for mutation in mutations:
+            with self.subTest(mutation=mutation):
+                self.reject(
+                    lambda record, mutation=mutation: record["source_review_remedy"].update(mutation),
+                    "source review remedy binding drift",
+                )
+
     def test_holding_main_cannot_become_authority(self) -> None:
         self.reject(
             lambda record: record["destination"].update(

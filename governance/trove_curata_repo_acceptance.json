@@ -1,6 +1,6 @@
 {
   "acceptance_id": "TC-REPO-ACCEPT-001",
-  "acceptance_record_sha256": "b87fc7ea4771947eda954abd7c8f6babc558fd1972b86fffef05276b20cd2cbb",
+  "acceptance_record_sha256": "c12e23d789d0f6e58d3b6dff17662c0d61d21794b4e997f56e888bfe7f32ddf7",
   "activation_contract": {
     "activation_created_by_this_record": false,
     "destination_protected_merge_required": true,
@@ -692,8 +692,13 @@
     "documentation_blob_sha": "5b31e0f752779f8adba8b8e79e9ffa6215944183",
     "documentation_path": "docs/TC_BOOTSTRAP_CLOSE_001_T3_REVIEW_REMEDY_001.md",
     "historical_t3_gate_satisfied": false,
+    "github_merged_by": "fyremael",
+    "github_merged_by_is_executor_session_identity": false,
     "human_steward_disposition_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383424656",
     "issue_number": 70,
+    "mechanical_executor_non_author": true,
+    "mechanical_executor_receipt_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383546879",
+    "mechanical_executor_session": "01a02c12-1dd9-7e32-a30a-cdf4a82bb609",
     "post_merge_workflow_runs": {
       "ci": "32608639842",
       "codeql": "32608639720",
