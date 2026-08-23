@@ -66,7 +66,12 @@ class BootstrapAcceptanceTests(unittest.TestCase):
         self.assertEqual(load_and_validate(RECORD), self.record)
 
     def test_builder_reproduces_canonical_acceptance(self) -> None:
-        self.assertEqual(BUILDER_MODULE.build_record(), self.record)
+        built = BUILDER_MODULE.build_record()
+        self.assertEqual(built, self.record)
+        self.assertEqual(
+            json.dumps(built, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            RECORD.read_text(encoding="utf-8"),
+        )
 
     def test_canonical_record_passes_structural_schema(self) -> None:
         schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
