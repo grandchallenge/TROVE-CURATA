@@ -7,6 +7,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import jsonschema
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
@@ -27,6 +29,7 @@ BootstrapAcceptanceError = MODULE.BootstrapAcceptanceError
 load_and_validate = MODULE.load_and_validate
 validate_bootstrap_acceptance = MODULE.validate_bootstrap_acceptance
 RECORD = ROOT / "governance" / "trove_curata_repo_acceptance.json"
+SCHEMA = ROOT / "schemas" / "trove_curata_repo_acceptance.schema.json"
 
 
 class BootstrapAcceptanceTests(unittest.TestCase):
@@ -64,6 +67,35 @@ class BootstrapAcceptanceTests(unittest.TestCase):
 
     def test_builder_reproduces_canonical_acceptance(self) -> None:
         self.assertEqual(BUILDER_MODULE.build_record(), self.record)
+
+    def test_canonical_record_passes_structural_schema(self) -> None:
+        schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
+        contract = schema["x-grandchallenge-validation-contract"]
+        self.assertEqual(contract["schema_role"], "structural_interchange")
+        self.assertEqual(
+            contract["authoritative_acceptance_validator"],
+            "scripts/validate_bootstrap_acceptance.py",
+        )
+        self.assertTrue(contract["canonical_record_must_pass_both"])
+        self.assertFalse(contract["mutation_parity_claimed"])
+        jsonschema.Draft202012Validator.check_schema(schema)
+        jsonschema.validate(self.record, schema, cls=jsonschema.Draft202012Validator)
+
+    def test_structural_schema_does_not_authorize_identity_drift(self) -> None:
+        schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
+        mutations = (
+            lambda record: record.update({"imported_mapping_sha256": "0" * 64}),
+            lambda record: record.update({"acceptance_record_sha256": "0" * 64}),
+            lambda record: record["imported_artifacts"][0].update({"blob_sha": "0" * 40}),
+            lambda record: record["imported_artifacts"][0].update({"size": 0}),
+        )
+        for mutate in mutations:
+            with self.subTest(mutate=mutate):
+                broken = copy.deepcopy(self.record)
+                mutate(broken)
+                jsonschema.validate(broken, schema, cls=jsonschema.Draft202012Validator)
+                with self.assertRaises(BootstrapAcceptanceError):
+                    validate_bootstrap_acceptance(broken)
 
     def test_unknown_root_field_rejected(self) -> None:
         self.reject(lambda record: record.update({"extra": True}), "field set drift")

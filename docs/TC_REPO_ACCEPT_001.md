@@ -34,6 +34,8 @@ The missing historical evidence was not relabelled. INTELLECT PR 71 supplied the
 
 The destination acceptance packet projects the unchanged effective INTELLECT authority schedule through protected head `08a3044e0363fa932012fa642ea15d9153ba876b`. It requires exact-revision findings from a non-author agent Adversary and a different non-author agent Referee in a distinct session, followed by one authenticated exact-head disposition from ordinary Human Steward `fyremael`.
 
+The JSON Schema is the structural interchange contract. The authoritative acceptance validator additionally binds exact imported Git blobs and sizes, filesystem byte equivalence, the imported mapping digest and the canonical acceptance-record digest. The canonical record must pass both layers; mutation parity is not claimed where the schema intentionally permits structurally valid identities that the authoritative semantic validator rejects. CI tests this boundary explicitly.
+
 There are no mandatory routine human reviewers. Recovery owner `jimsteeg` may participate only for an exact recovery operation or when separately named as an optional bounded reviewer; that participation is not a routine merge prerequisite. A GitHub approval and a mechanical merge click do not substitute for the Human Steward disposition. Once the exact-head gate is complete, a non-author executor may mechanically perform the expected-head protected merge. An agent that authored candidate bytes may not approve, independently review or merge those bytes.
 
 ## Immutable import

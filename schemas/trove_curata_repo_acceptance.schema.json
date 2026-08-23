@@ -2,6 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://grandchallenge.ai/schemas/trove_curata_repo_acceptance.schema.json",
   "title": "TROVE-CURATA repository bootstrap acceptance",
+  "$comment": "Structural interchange validation only. Exact immutable evidence identities, byte equivalence and canonical digests are governed by scripts/validate_bootstrap_acceptance.py.",
+  "x-grandchallenge-validation-contract": {
+    "schema_role": "structural_interchange",
+    "authoritative_acceptance_validator": "scripts/validate_bootstrap_acceptance.py",
+    "canonical_record_must_pass_both": true,
+    "mutation_parity_claimed": false,
+    "semantic_only_obligations": [
+      "exact_imported_blob_and_size_identity",
+      "imported_mapping_digest",
+      "acceptance_record_digest",
+      "filesystem_byte_equivalence"
+    ]
+  },
   "type": "object",
   "additionalProperties": false,
   "required": [
