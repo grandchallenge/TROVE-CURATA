@@ -9,6 +9,7 @@
     "acceptance_id",
     "status",
     "source",
+    "source_review_remedy",
     "destination",
     "imported_artifact_count",
     "imported_artifacts",
@@ -23,11 +24,40 @@
     "acceptance_record_sha256"
   ],
   "properties": {
-    "schema_version": {"const": "0.2.0"},
+    "schema_version": {"const": "0.3.0"},
     "acceptance_id": {"const": "TC-REPO-ACCEPT-001"},
     "status": {"const": "prepared_pending_destination_protected_merge_and_two_sided_readback"},
-    "source": {"type": "object"},
-    "destination": {"type": "object"},
+    "source": {
+      "const": {
+        "artifact_inventory_sha256": "ad2803363071e7402cdaa48b3d39062a0efcaac2e53eac69ab76a93001484d6d",
+        "candidate_head": "d587996f71a38aeb8ce4a0c667da1a8350b7f153",
+        "candidate_tree": "27539df4924775abf5a841b7591aaaa38223d672",
+        "closure_record_blob_sha": "ebb2e6c470748bb58daed0eff0b9af1e553c9c1a",
+        "closure_record_canonical_sha256": "ec871730221523a55e09c81b7e81d785284e4b181ec84ac65480962c9f8dee27",
+        "closure_record_file_sha256": "ec55bb8fe7b8235d880bea80995dbcffa2520c047b758363e7afe90c33802653",
+        "issue_number": 68,
+        "protected_snapshot_head": "8c3da17b2c401944e43b6e9bb0fae3bc95b05624",
+        "protected_snapshot_tree": "9d1f2d2b821a3398e8895b75f8badebc2fb6a059",
+        "protected_source_closure_merge": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+        "pull_request_number": 69,
+        "repository": "grandchallenge/INTELLECT",
+        "source_closure_status": "protected"
+      }
+    },
+    "source_review_remedy": {"$ref": "#/$defs/sourceReviewRemedy"},
+    "destination": {
+      "const": {
+        "activation_state": "not_active",
+        "candidate_branch": "agent/tc-repo-accept-001",
+        "canonical_from": "TC-FIXTURE-006",
+        "expected_pull_request_number": 1,
+        "holding_main_head": "f9e5dafbda1c409fd416daca46a2f197b5e59034",
+        "holding_main_is_authority_source": false,
+        "issue_number": 1,
+        "repository": "grandchallenge/TROVE-CURATA",
+        "visibility": "public"
+      }
+    },
     "imported_artifact_count": {"const": 92},
     "imported_artifacts": {
       "type": "array",
@@ -36,17 +66,91 @@
       "items": {"$ref": "#/$defs/importedArtifact"}
     },
     "imported_mapping_sha256": {"$ref": "#/$defs/sha256"},
-    "bootstrap_roots": {"type": "object"},
-    "review_remedies": {"type": "object"},
-    "replay_contract": {"type": "object"},
-    "activation_contract": {"type": "object"},
+    "bootstrap_roots": {
+      "const": {
+        "fixtures/trove_curata": "a8e12624ea8e40aec554ddf3fda072eace0b791f",
+        "schemas": "5854b49efbfbf013ddfe7aa76697a3a49552b6e1",
+        "workflows": "01bdb91536cc20c149d517824eda8ff24b4a10ae"
+      }
+    },
+    "review_remedies": {
+      "const": {
+        "fixture_003": {
+          "historical_defect_preserved": true,
+          "historical_state_rewritten": false,
+          "prospective_remedy_record": "TC-FIXTURE-003-REVIEW-REMEDY-001"
+        },
+        "fixture_004": {
+          "historical_defect_preserved": true,
+          "historical_state_rewritten": false,
+          "prospective_remedy_record": "TC-FIXTURE-004-REVIEW-REMEDY-001"
+        }
+      }
+    },
+    "replay_contract": {
+      "const": {
+        "byte_identical_fixture_005_reports_required": true,
+        "expected_report_sha256": {
+          "TC-FIXTURE-001": "796da735806ecdeb84e83481c9b0dfed187b1fc0d68054744284839e6180e091",
+          "TC-FIXTURE-002": "e31946855b4c3f67e43277586adce337716642e5a9b6bd37244b63b678ca1d58",
+          "TC-FIXTURE-003": "f3b52e9ffe77f27bf37355f31a441e7096c9bf2b4684db4aae5b440580aac4d5",
+          "TC-FIXTURE-004": "e54958a4e09b536795dde271486d4f32212f80c3168abb0b7b788ec52323ea13",
+          "TC-FIXTURE-005": "2b6633a0174c57953637ad53b3c92e213d9a688180df8e0f0a13ac6486fbcae4"
+        },
+        "fixtures": ["TC-FIXTURE-001", "TC-FIXTURE-002", "TC-FIXTURE-003", "TC-FIXTURE-004", "TC-FIXTURE-005"],
+        "network_after_provider_installation_allowed": false,
+        "pinned_providers_required": true,
+        "two_fixture_005_replays_required": true,
+        "workflow_success_is_review_substitute": false
+      }
+    },
+    "activation_contract": {
+      "const": {
+        "activation_created_by_this_record": false,
+        "destination_protected_merge_required": true,
+        "fixture_006_may_begin": false,
+        "review_tier": "T3",
+        "source_and_destination_records_must_cross_bind": true,
+        "source_protected_merge_required": true,
+        "two_sided_readback_required": true
+      }
+    },
     "operating_authority": {"$ref": "#/$defs/operatingAuthority"},
-    "authority_boundary": {"type": "object"},
+    "authority_boundary": {
+      "const": {
+        "aether_role": "future_projection_nonblocking",
+        "gcl_contained": true,
+        "holding_main_creates_authority": false,
+        "import_creates_new_bootstrap_authority": false,
+        "manifests_have_adjudication_authority": false,
+        "metrics_have_admission_authority": false,
+        "passports_have_admission_authority": false,
+        "project_owner": "grandchallenge",
+        "providers_have_admission_authority": false,
+        "providers_have_policy_authority": false
+      }
+    },
     "claim_boundary": {
-      "type": "object",
-      "additionalProperties": {"const": false},
-      "minProperties": 18,
-      "maxProperties": 18
+      "const": {
+        "canonical_record_selected": false,
+        "commercial_claim_authorized": false,
+        "dataset_quality_certified": false,
+        "downstream_improvement_proved": false,
+        "legality_or_rights_certified": false,
+        "novelty_or_priority_claimed": false,
+        "privacy_certified": false,
+        "production_corpus_admitted": false,
+        "public_release_authorized": false,
+        "records_admitted": false,
+        "records_deleted": false,
+        "records_ranked": false,
+        "records_rejected": false,
+        "records_retained_by_authority": false,
+        "records_suppressed": false,
+        "reference_contamination_absence_proved": false,
+        "release_candidate_declared": false,
+        "training_fitness_qualified": false
+      }
     },
     "acceptance_record_sha256": {"$ref": "#/$defs/sha256"}
   },
@@ -79,7 +183,7 @@
       ],
       "properties": {
         "repository": {"const": "grandchallenge/INTELLECT"},
-        "protected_head": {"const": "041f7d9b1c85e157a651bcf3edf07c7499185b00"},
+        "protected_head": {"const": "08a3044e0363fa932012fa642ea15d9153ba876b"},
         "schedule_path": {"const": "governance/constitutional_authority_schedule.json"},
         "schedule_blob_sha": {"const": "6f66ed27ed7ff2889e4dd67c34973c8fa2f798a8"},
         "schedule_schema_version": {"const": "1.5.0"},
@@ -97,6 +201,43 @@
         "mechanical_merge_is_human_steward_authorization": {"const": false},
         "recovery_owner_required_for_routine_merge": {"const": false},
         "agent_may_merge_own_work": {"const": false}
+      }
+    },
+    "sourceReviewRemedy": {
+      "const": {
+        "adversary_comment_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383175234",
+        "all_post_merge_workflows_succeeded": true,
+        "candidate_head": "27930e1cc4d2c2de1e35c8b143e51651a71a9fb6",
+        "candidate_tree": "21fc40b033aae1513d90945bc1667afaaf8cc937",
+        "documentation_blob_sha": "5b31e0f752779f8adba8b8e79e9ffa6215944183",
+        "documentation_path": "docs/TC_BOOTSTRAP_CLOSE_001_T3_REVIEW_REMEDY_001.md",
+        "historical_t3_gate_satisfied": false,
+        "human_steward_disposition_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383424656",
+        "issue_number": 70,
+        "post_merge_workflow_runs": {
+          "ci": "32608639842",
+          "codeql": "32608639720",
+          "gcl_conformance": "32608640194",
+          "trove_curata_bootstrap_closure": "32608639805"
+        },
+        "prospective_remedy_protected": true,
+        "protected_main_readback": true,
+        "protected_merge": "08a3044e0363fa932012fa642ea15d9153ba876b",
+        "protected_merge_second_parent_is_authorized_candidate": true,
+        "protected_merge_tree": "21fc40b033aae1513d90945bc1667afaaf8cc937",
+        "protected_predecessor": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+        "pull_request_number": 71,
+        "referee_comment_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383175345",
+        "remedy_id": "TC-BOOTSTRAP-CLOSE-001-T3-REVIEW-REMEDY-001",
+        "remedy_record_blob_sha": "ac7dadc7db8f1d7ee78dd906bba864a069df1751",
+        "remedy_record_path": "governance/trove_curata_bootstrap_close_001_t3_review_remedy.json",
+        "repository": "grandchallenge/INTELLECT",
+        "schema_blob_sha": "0cebe69633d7c558a1048956d11f513fd367ad71",
+        "schema_path": "schemas/trove_curata_bootstrap_close_001_t3_review_remedy.schema.json",
+        "tests_blob_sha": "3bc06851d4a6ba1552814dec338a616ea2b9d970",
+        "tests_path": "tests/test_trove_curata_bootstrap_close_001_t3_review_remedy.py",
+        "validator_blob_sha": "fadb30ce872d1c7c6cd9f1bc2dfea80a6c91c97f",
+        "validator_path": "src/grand_intellect/trove_curata_bootstrap_close_001_t3_review_remedy.py"
       }
     },
     "importedArtifact": {

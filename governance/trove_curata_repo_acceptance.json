@@ -1,6 +1,6 @@
 {
   "acceptance_id": "TC-REPO-ACCEPT-001",
-  "acceptance_record_sha256": "2e4cf8154451b598c7bddeb27ff43d1acdf77bd77561d7fd7128dcb5ee0a1526",
+  "acceptance_record_sha256": "b87fc7ea4771947eda954abd7c8f6babc558fd1972b86fffef05276b20cd2cbb",
   "activation_contract": {
     "activation_created_by_this_record": false,
     "destination_protected_merge_required": true,
@@ -627,7 +627,7 @@
     "mechanical_merge_is_human_steward_authorization": false,
     "non_author_agent_adversary_required": true,
     "ordinary_human_steward": "fyremael",
-    "protected_head": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+    "protected_head": "08a3044e0363fa932012fa642ea15d9153ba876b",
     "recovery_owner": "jimsteeg",
     "recovery_owner_required_for_routine_merge": false,
     "repository": "grandchallenge/INTELLECT",
@@ -668,7 +668,7 @@
       "prospective_remedy_record": "TC-FIXTURE-004-REVIEW-REMEDY-001"
     }
   },
-  "schema_version": "0.2.0",
+  "schema_version": "0.3.0",
   "source": {
     "artifact_inventory_sha256": "ad2803363071e7402cdaa48b3d39062a0efcaac2e53eac69ab76a93001484d6d",
     "candidate_head": "d587996f71a38aeb8ce4a0c667da1a8350b7f153",
@@ -683,6 +683,41 @@
     "pull_request_number": 69,
     "repository": "grandchallenge/INTELLECT",
     "source_closure_status": "protected"
+  },
+  "source_review_remedy": {
+    "adversary_comment_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383175234",
+    "all_post_merge_workflows_succeeded": true,
+    "candidate_head": "27930e1cc4d2c2de1e35c8b143e51651a71a9fb6",
+    "candidate_tree": "21fc40b033aae1513d90945bc1667afaaf8cc937",
+    "documentation_blob_sha": "5b31e0f752779f8adba8b8e79e9ffa6215944183",
+    "documentation_path": "docs/TC_BOOTSTRAP_CLOSE_001_T3_REVIEW_REMEDY_001.md",
+    "historical_t3_gate_satisfied": false,
+    "human_steward_disposition_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383424656",
+    "issue_number": 70,
+    "post_merge_workflow_runs": {
+      "ci": "32608639842",
+      "codeql": "32608639720",
+      "gcl_conformance": "32608640194",
+      "trove_curata_bootstrap_closure": "32608639805"
+    },
+    "prospective_remedy_protected": true,
+    "protected_main_readback": true,
+    "protected_merge": "08a3044e0363fa932012fa642ea15d9153ba876b",
+    "protected_merge_second_parent_is_authorized_candidate": true,
+    "protected_merge_tree": "21fc40b033aae1513d90945bc1667afaaf8cc937",
+    "protected_predecessor": "041f7d9b1c85e157a651bcf3edf07c7499185b00",
+    "pull_request_number": 71,
+    "referee_comment_url": "https://github.com/grandchallenge/INTELLECT/pull/71#issuecomment-5383175345",
+    "remedy_id": "TC-BOOTSTRAP-CLOSE-001-T3-REVIEW-REMEDY-001",
+    "remedy_record_blob_sha": "ac7dadc7db8f1d7ee78dd906bba864a069df1751",
+    "remedy_record_path": "governance/trove_curata_bootstrap_close_001_t3_review_remedy.json",
+    "repository": "grandchallenge/INTELLECT",
+    "schema_blob_sha": "0cebe69633d7c558a1048956d11f513fd367ad71",
+    "schema_path": "schemas/trove_curata_bootstrap_close_001_t3_review_remedy.schema.json",
+    "tests_blob_sha": "3bc06851d4a6ba1552814dec338a616ea2b9d970",
+    "tests_path": "tests/test_trove_curata_bootstrap_close_001_t3_review_remedy.py",
+    "validator_blob_sha": "fadb30ce872d1c7c6cd9f1bc2dfea80a6c91c97f",
+    "validator_path": "src/grand_intellect/trove_curata_bootstrap_close_001_t3_review_remedy.py"
   },
   "status": "prepared_pending_destination_protected_merge_and_two_sided_readback"
 }

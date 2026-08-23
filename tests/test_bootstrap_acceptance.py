@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import importlib.util
 import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -31,6 +32,26 @@ class BootstrapAcceptanceTests(unittest.TestCase):
         with self.assertRaisesRegex(BootstrapAcceptanceError, pattern):
             validate_bootstrap_acceptance(broken)
 
+    def reject_text_replacement(self, marker: str, replacement: str, pattern: str) -> None:
+        source = RECORD.read_text(encoding="utf-8")
+        self.assertEqual(source.count(marker), 1)
+        broken = source.replace(marker, replacement, 1)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "mutated.json"
+            path.write_text(broken, encoding="utf-8")
+            with self.assertRaisesRegex(BootstrapAcceptanceError, pattern):
+                load_and_validate(path)
+
+    def reject_duplicate(self, marker: str, duplicate_member: str) -> None:
+        source = RECORD.read_text(encoding="utf-8")
+        self.assertEqual(source.count(marker), 1)
+        broken = source.replace(marker, f"{duplicate_member}\n{marker}", 1)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "duplicate.json"
+            path.write_text(broken, encoding="utf-8")
+            with self.assertRaisesRegex(BootstrapAcceptanceError, "duplicate JSON object key"):
+                load_and_validate(path)
+
     def test_canonical_acceptance_validates(self) -> None:
         self.assertEqual(load_and_validate(RECORD), self.record)
 
@@ -57,6 +78,30 @@ class BootstrapAcceptanceTests(unittest.TestCase):
                 {"source_closure_status": "review_ready_not_protected"}
             ),
             "source binding drift",
+        )
+
+    def test_source_review_remedy_head_drift_rejected(self) -> None:
+        self.reject(
+            lambda record: record["source_review_remedy"].update({"candidate_head": "0" * 40}),
+            "source review remedy binding drift",
+        )
+
+    def test_historical_t3_gate_cannot_be_relabelled(self) -> None:
+        self.reject(
+            lambda record: record["source_review_remedy"].update({"historical_t3_gate_satisfied": True}),
+            "source review remedy binding drift",
+        )
+
+    def test_source_review_remedy_must_be_protected(self) -> None:
+        self.reject(
+            lambda record: record["source_review_remedy"].update({"prospective_remedy_protected": False}),
+            "source review remedy binding drift",
+        )
+
+    def test_source_review_remedy_workflows_must_succeed(self) -> None:
+        self.reject(
+            lambda record: record["source_review_remedy"].update({"all_post_merge_workflows_succeeded": False}),
+            "source review remedy binding drift",
         )
 
     def test_holding_main_cannot_become_authority(self) -> None:
@@ -125,7 +170,7 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             lambda record: record["activation_contract"].update(
                 {"source_protected_merge_required": False}
             ),
-            "activation safeguard disabled",
+            "activation contract drift",
         )
 
     def test_two_sided_readback_cannot_be_removed(self) -> None:
@@ -133,7 +178,7 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             lambda record: record["activation_contract"].update(
                 {"two_sided_readback_required": False}
             ),
-            "activation safeguard disabled",
+            "activation contract drift",
         )
 
     def test_fixture_006_cannot_begin(self) -> None:
@@ -141,7 +186,7 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             lambda record: record["activation_contract"].update(
                 {"fixture_006_may_begin": True}
             ),
-            "premature fixture 006 authority",
+            "activation contract drift",
         )
 
     def test_routine_human_reviewer_cannot_be_added(self) -> None:
@@ -181,7 +226,7 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             lambda record: record["authority_boundary"].update(
                 {"providers_have_admission_authority": True}
             ),
-            "authority escalation",
+            "authority boundary drift or escalation",
         )
 
     def test_import_cannot_create_authority(self) -> None:
@@ -189,7 +234,7 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             lambda record: record["authority_boundary"].update(
                 {"import_creates_new_bootstrap_authority": True}
             ),
-            "authority escalation",
+            "authority boundary drift or escalation",
         )
 
     def test_claim_inflation_rejected(self) -> None:
@@ -197,7 +242,43 @@ class BootstrapAcceptanceTests(unittest.TestCase):
             lambda record: record["claim_boundary"].update(
                 {"dataset_quality_certified": True}
             ),
-            "claim inflation",
+            "claim boundary drift or inflation",
+        )
+
+    def test_claim_key_substitution_rejected(self) -> None:
+        def substitute(record) -> None:
+            del record["claim_boundary"]["canonical_record_selected"]
+            record["claim_boundary"]["invented_claim"] = False
+
+        self.reject(substitute, "claim boundary drift or inflation")
+
+    def test_boolean_integer_substitution_rejected(self) -> None:
+        self.reject(
+            lambda record: record["operating_authority"].update({"agent_may_merge_own_work": 0}),
+            "operating authority drift",
+        )
+
+    def test_duplicate_root_key_rejected(self) -> None:
+        self.reject_duplicate('  "acceptance_id": "TC-REPO-ACCEPT-001",', '  "acceptance_id": "ESCALATED",')
+
+    def test_duplicate_authority_key_rejected(self) -> None:
+        self.reject_duplicate(
+            '    "import_creates_new_bootstrap_authority": false,',
+            '    "import_creates_new_bootstrap_authority": true,',
+        )
+
+    def test_precision_collision_rejected(self) -> None:
+        self.reject_text_replacement(
+            '    "issue_number": 70,',
+            '    "issue_number": 70.000000000000000000000001,',
+            "source review remedy binding drift",
+        )
+
+    def test_non_finite_number_rejected(self) -> None:
+        self.reject_text_replacement(
+            '    "issue_number": 70,',
+            '    "issue_number": NaN,',
+            "non-finite JSON number rejected",
         )
 
     def test_acceptance_record_digest_drift_rejected(self) -> None:

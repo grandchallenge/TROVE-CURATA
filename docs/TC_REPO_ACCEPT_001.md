@@ -26,11 +26,13 @@ The acceptance package binds:
 - the source fixture, schema and workflow roots;
 - the Fixture 003 and Fixture 004 review defects and prospective remedies.
 
-INTELLECT PR 69 was protected-merged as `041f7d9b1c85e157a651bcf3edf07c7499185b00`. The merge binds the exact reviewed source candidate `d587996f71a38aeb8ce4a0c667da1a8350b7f153` to protected predecessor `8c3da17b2c401944e43b6e9bb0fae3bc95b05624` with tree `27539df4924775abf5a841b7591aaaa38223d672`. Source closure is complete; destination acceptance remains pending exact-head review, protected destination merge and two-sided readback.
+INTELLECT PR 69 was protected-merged as `041f7d9b1c85e157a651bcf3edf07c7499185b00`. The merge binds source candidate `d587996f71a38aeb8ce4a0c667da1a8350b7f153` to predecessor `8c3da17b2c401944e43b6e9bb0fae3bc95b05624` with tree `27539df4924775abf5a841b7591aaaa38223d672`, but its historical T3 gate remains explicitly unsatisfied.
+
+The missing historical evidence was not relabelled. INTELLECT PR 71 supplied the prospective remedy at exact head `27930e1cc4d2c2de1e35c8b143e51651a71a9fb6`, tree `21fc40b033aae1513d90945bc1667afaaf8cc937`, and protected merge `08a3044e0363fa932012fa642ea15d9153ba876b`. That merge has predecessor `041f7d9b1c85e157a651bcf3edf07c7499185b00` and the authorized remedy head as its second parent. Protected-main readback and all four post-merge workflows passed. Destination acceptance remains pending its own exact-head review, protected merge and two-sided readback.
 
 ## T3 staffing and execution
 
-The destination acceptance packet projects the effective protected INTELLECT authority schedule at `041f7d9b1c85e157a651bcf3edf07c7499185b00`. It requires exact-revision findings from a non-author agent Adversary and a different non-author agent Referee in a distinct session, followed by one authenticated exact-head disposition from ordinary Human Steward `fyremael`.
+The destination acceptance packet projects the unchanged effective INTELLECT authority schedule through protected head `08a3044e0363fa932012fa642ea15d9153ba876b`. It requires exact-revision findings from a non-author agent Adversary and a different non-author agent Referee in a distinct session, followed by one authenticated exact-head disposition from ordinary Human Steward `fyremael`.
 
 There are no mandatory routine human reviewers. Recovery owner `jimsteeg` may participate only for an exact recovery operation or when separately named as an optional bounded reviewer; that participation is not a routine merge prerequisite. A GitHub approval and a mechanical merge click do not substitute for the Human Steward disposition. Once the exact-head gate is complete, a non-author executor may mechanically perform the expected-head protected merge. An agent that authored candidate bytes may not approve, independently review or merge those bytes.
 
