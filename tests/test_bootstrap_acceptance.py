@@ -16,6 +16,13 @@ assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 
+BUILDER_SPEC = importlib.util.spec_from_file_location(
+    "build_bootstrap_acceptance", ROOT / "scripts" / "build_bootstrap_acceptance.py"
+)
+assert BUILDER_SPEC and BUILDER_SPEC.loader
+BUILDER_MODULE = importlib.util.module_from_spec(BUILDER_SPEC)
+BUILDER_SPEC.loader.exec_module(BUILDER_MODULE)
+
 BootstrapAcceptanceError = MODULE.BootstrapAcceptanceError
 load_and_validate = MODULE.load_and_validate
 validate_bootstrap_acceptance = MODULE.validate_bootstrap_acceptance
@@ -54,6 +61,9 @@ class BootstrapAcceptanceTests(unittest.TestCase):
 
     def test_canonical_acceptance_validates(self) -> None:
         self.assertEqual(load_and_validate(RECORD), self.record)
+
+    def test_builder_reproduces_canonical_acceptance(self) -> None:
+        self.assertEqual(BUILDER_MODULE.build_record(), self.record)
 
     def test_unknown_root_field_rejected(self) -> None:
         self.reject(lambda record: record.update({"extra": True}), "field set drift")
