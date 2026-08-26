@@ -1,0 +1,2 @@
+def f(x): return x**2
+The matrix entry a[192, 0, 2] is not an IP address. The equation y = mx + b contains no contact data.

@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/trove_curata_review_attestation.schema.json",
+  "title": "TROVE-CURATA retrospective review attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "attestation_id",
+    "status",
+    "historical_subject",
+    "remedy_contract",
+    "authority_boundary",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "attestation_id": {"const": "TROVE-CURATA-REVIEW-REMEDY-001"},
+    "status": {"const": "pending_independent_review"},
+    "historical_subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "work_package_id",
+        "pull_request_number",
+        "author_account",
+        "exact_merged_head",
+        "protected_merge_commit",
+        "exact_head_ci_run",
+        "exact_head_conformance_run",
+        "submitted_review_count",
+        "historically_reviewed"
+      ],
+      "properties": {
+        "repository": {"const": "grandchallenge/INTELLECT"},
+        "work_package_id": {"const": "TROVE-CURATA-XREF-WP00"},
+        "pull_request_number": {"const": 24},
+        "author_account": {"const": "fyremael"},
+        "exact_merged_head": {"const": "b6158a995a97ae58abfe139925de4ec6c9cd0a0b"},
+        "protected_merge_commit": {"const": "e080192f3c4cb1881cf781572dd1246b22792163"},
+        "exact_head_ci_run": {"const": 30710145476},
+        "exact_head_conformance_run": {"const": 30710145683},
+        "submitted_review_count": {"const": 0},
+        "historically_reviewed": {"const": false}
+      }
+    },
+    "remedy_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "historical_state_rewritten",
+        "required_review_event",
+        "reviewer_must_be_non_author",
+        "reviewer_must_be_maintainer",
+        "review_must_target_final_head",
+        "comment_is_substitute",
+        "reaction_is_substitute",
+        "merge_action_is_substitute",
+        "author_self_review_is_substitute",
+        "protected_merge_required",
+        "prospective_remediation_only"
+      ],
+      "properties": {
+        "historical_state_rewritten": {"const": false},
+        "required_review_event": {"const": "APPROVED"},
+        "reviewer_must_be_non_author": {"const": true},
+        "reviewer_must_be_maintainer": {"const": true},
+        "review_must_target_final_head": {"const": true},
+        "comment_is_substitute": {"const": false},
+        "reaction_is_substitute": {"const": false},
+        "merge_action_is_substitute": {"const": false},
+        "author_self_review_is_substitute": {"const": false},
+        "protected_merge_required": {"const": true},
+        "prospective_remediation_only": {"const": true}
+      }
+    },
+    "authority_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project_owner", "project_scope", "external_project_dependency", "aether_role"],
+      "properties": {
+        "project_owner": {"const": "grandchallenge"},
+        "project_scope": {"const": "gcl_contained"},
+        "external_project_dependency": {"const": false},
+        "aether_role": {"const": "future_projection_nonblocking"}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_quality_proved",
+        "privacy_proved",
+        "legality_proved",
+        "safety_proved",
+        "fitness_for_training_proved",
+        "downstream_improvement_proved",
+        "novelty_or_priority_claimed",
+        "commercial_claim_authorized"
+      ],
+      "properties": {
+        "dataset_quality_proved": {"const": false},
+        "privacy_proved": {"const": false},
+        "legality_proved": {"const": false},
+        "safety_proved": {"const": false},
+        "fitness_for_training_proved": {"const": false},
+        "downstream_improvement_proved": {"const": false},
+        "novelty_or_priority_claimed": {"const": false},
+        "commercial_claim_authorized": {"const": false}
+      }
+    }
+  }
+}

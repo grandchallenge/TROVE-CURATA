@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1.0",
+  "fixture_id": "TC-FIXTURE-001",
+  "cases": [
+    {
+      "case_id": "ordinary-article",
+      "case_class": "ordinary_article",
+      "path": "html/ordinary_article.html",
+      "expected_language": "en",
+      "policy_state": "fixture_only",
+      "required_tokens": ["A governed corpus begins with traceable source bytes."],
+      "boilerplate_tokens": ["Home", "Subscribe"]
+    },
+    {
+      "case_id": "boilerplate-heavy",
+      "case_class": "boilerplate_heavy",
+      "path": "html/boilerplate_heavy.html",
+      "expected_language": "en",
+      "policy_state": "fixture_only",
+      "required_tokens": ["The central article survives extensive navigation and footer material."],
+      "boilerplate_tokens": ["Subscribe now", "Cookie settings", "Twenty navigation links"]
+    },
+    {
+      "case_id": "math-code",
+      "case_class": "math_and_code",
+      "path": "html/math_code.html",
+      "expected_language": "en",
+      "policy_state": "fixture_only",
+      "required_tokens": ["E = mc^2", "def square"],
+      "boilerplate_tokens": []
+    },
+    {
+      "case_id": "multilingual",
+      "case_class": "multilingual",
+      "path": "html/multilingual.html",
+      "expected_language": "mul",
+      "policy_state": "fixture_only",
+      "required_tokens": ["Hello from the English section.", "Bonjour depuis la section française."],
+      "boilerplate_tokens": []
+    },
+    {
+      "case_id": "malformed-markup",
+      "case_class": "malformed_markup",
+      "path": "html/malformed_markup.html",
+      "expected_language": "en",
+      "policy_state": "fixture_only",
+      "required_tokens": ["Malformed article still has recoverable text."],
+      "boilerplate_tokens": []
+    },
+    {
+      "case_id": "pii-observation",
+      "case_class": "pii_observation",
+      "path": "html/pii_observation.html",
+      "expected_language": "en",
+      "policy_state": "fixture_only",
+      "required_tokens": ["alex@example.test", "555-0100"],
+      "boilerplate_tokens": []
+    },
+    {
+      "case_id": "duplicate-a",
+      "case_class": "exact_duplicate",
+      "path": "html/duplicate_a.html",
+      "expected_language": "en",
+      "policy_state": "fixture_only",
+      "required_tokens": ["A shared duplicate article about governed data fixtures."],
+      "boilerplate_tokens": [],
+      "duplicate_group": "duplicate-pair-001"
+    },
+    {
+      "case_id": "duplicate-b",
+      "case_class": "exact_duplicate",
+      "path": "html/duplicate_b.html",
+      "expected_language": "en",
+      "policy_state": "fixture_only",
+      "required_tokens": ["A shared duplicate article about governed data fixtures."],
+      "boilerplate_tokens": [],
+      "duplicate_group": "duplicate-pair-001"
+    },
+    {
+      "case_id": "policy-review",
+      "case_class": "policy_review",
+      "path": "html/policy_review.html",
+      "expected_language": "en",
+      "policy_state": "review_required",
+      "required_tokens": ["This record contains a disputed retention label."],
+      "boilerplate_tokens": []
+    }
+  ]
+}

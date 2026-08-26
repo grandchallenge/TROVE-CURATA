@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.1.0",
+  "attestation_id": "TC-FIXTURE-003-REVIEW-REMEDY-001",
+  "status": "pending_independent_review",
+  "historical_subject": {
+    "repository": "grandchallenge/INTELLECT",
+    "work_package_id": "TC-FIXTURE-003",
+    "issue_number": 31,
+    "pull_request_number": 44,
+    "author_account": "fyremael",
+    "advertised_review_head": "c312bff71e9d9269de8abd52e85ae33f4a775571",
+    "stale_review": {
+      "review_id": "PRR_kwDOTcUbys8AAAABISLRyQ",
+      "reviewer": "jimsteeg",
+      "event": "APPROVED",
+      "submitted_at": "2026-08-04T05:21:36Z"
+    },
+    "final_merged_head": "af5a568a2f49db949ff5c355f33ab29231cabac4",
+    "final_head_created_at": "2026-08-04T05:21:42Z",
+    "final_head_commit_kind": "merge_main_into_topic",
+    "protected_merge_commit": "0096eb21ca62c5ef7f6e458f358edcb1cd963a20",
+    "merged_at": "2026-08-04T05:22:36Z",
+    "historical_exact_head_review_satisfied": false
+  },
+  "final_head_evidence": {
+    "head_sha": "af5a568a2f49db949ff5c355f33ab29231cabac4",
+    "workflow_runs": [
+      {"name": "CI", "run_id": 30880451010, "conclusion": "success"},
+      {"name": "GCL conformance", "run_id": 30880451499, "conclusion": "success"},
+      {"name": "TROVE-CURATA fixture", "run_id": 30880450978, "conclusion": "success"},
+      {"name": "TROVE-CURATA transformation fixture", "run_id": 30880450995, "conclusion": "success"}
+    ],
+    "all_required_workflows_successful": true,
+    "workflow_success_is_review_substitute": false
+  },
+  "defect": {
+    "kind": "approval_preceded_final_head",
+    "review_preceded_final_head_seconds": 6,
+    "advertised_head_differs_from_final_head": true,
+    "qualifying_exact_head_approval_count": 0,
+    "historical_timeline_rewritten": false
+  },
+  "remedy_contract": {
+    "historical_state_rewritten": false,
+    "required_review_event": "APPROVED",
+    "corrective_reviewer_must_be_non_author": true,
+    "corrective_reviewer_must_be_maintainer": true,
+    "review_must_target_corrective_pr_final_head": true,
+    "comment_is_substitute": false,
+    "reaction_is_substitute": false,
+    "merge_action_is_substitute": false,
+    "author_self_review_is_substitute": false,
+    "protected_merge_required": true,
+    "prospective_remediation_only": true,
+    "fixture_004_blocked_until_remedy_merge": true
+  },
+  "authority_boundary": {
+    "project_owner": "grandchallenge",
+    "project_scope": "gcl_contained",
+    "implementation_changed": false,
+    "external_project_dependency": false,
+    "aether_role": "future_projection_nonblocking"
+  },
+  "claim_boundary": {
+    "corpus_admitted": false,
+    "deletion_authorized": false,
+    "anonymity_proved": false,
+    "privacy_compliance_proved": false,
+    "legality_proved": false,
+    "safety_proved": false,
+    "fitness_for_training_proved": false,
+    "production_release_qualified": false,
+    "downstream_improvement_proved": false,
+    "novelty_or_priority_claimed": false,
+    "commercial_claim_authorized": false
+  }
+}

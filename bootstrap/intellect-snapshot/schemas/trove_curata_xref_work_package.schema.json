@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://grandchallenge.ai/schemas/trove_curata_xref_work_package.schema.json",
+  "title": "TROVE-CURATA GCL-contained work package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "work_package_id",
+    "status",
+    "authority",
+    "dependency_policy",
+    "record_contracts",
+    "review_tiers",
+    "provider_decisions",
+    "fixture",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.2.0"},
+    "work_package_id": {"const": "TROVE-CURATA-XREF-WP00"},
+    "status": {
+      "enum": ["approved", "implemented", "reviewed", "admitted", "superseded"]
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project_owner",
+        "governance_repository",
+        "bootstrap_implementation_repository",
+        "project_scope",
+        "external_project_dependency",
+        "external_repositories_role",
+        "current_operational_authority",
+        "aether_role"
+      ],
+      "properties": {
+        "project_owner": {"const": "grandchallenge"},
+        "governance_repository": {"const": "grandchallenge/INTELLECT"},
+        "bootstrap_implementation_repository": {"const": "grandchallenge/INTELLECT"},
+        "project_scope": {"const": "gcl_contained"},
+        "external_project_dependency": {"const": false},
+        "external_repositories_role": {"const": "reference_only_non_authoritative"},
+        "current_operational_authority": {"const": "github"},
+        "aether_role": {"const": "future_projection_nonblocking"}
+      }
+    },
+    "dependency_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "external_project_repository_dependencies_allowed",
+        "pinned_open_source_providers_allowed",
+        "providers_have_policy_authority",
+        "fixture_replay_requires_network",
+        "future_dedicated_repository_required_for_wp00"
+      ],
+      "properties": {
+        "external_project_repository_dependencies_allowed": {"const": false},
+        "pinned_open_source_providers_allowed": {"const": true},
+        "providers_have_policy_authority": {"const": false},
+        "fixture_replay_requires_network": {"const": false},
+        "future_dedicated_repository_required_for_wp00": {"const": false}
+      }
+    },
+    "record_contracts": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "trove_source_record",
+          "curata_transformation_receipt",
+          "curata_passport",
+          "trove_release_manifest"
+        ]
+      },
+      "allOf": [
+        {"contains": {"const": "trove_source_record"}, "minContains": 1, "maxContains": 1},
+        {"contains": {"const": "curata_transformation_receipt"}, "minContains": 1, "maxContains": 1},
+        {"contains": {"const": "curata_passport"}, "minContains": 1, "maxContains": 1},
+        {"contains": {"const": "trove_release_manifest"}, "minContains": 1, "maxContains": 1}
+      ]
+    },
+    "review_tiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["T0", "T1", "T2", "T3"],
+      "properties": {
+        "T0": {"const": "editorial_or_nonsemantic"},
+        "T1": {"const": "deterministic_transformation"},
+        "T2": {"const": "judgment_or_retention_policy"},
+        "T3": {"const": "corpus_admission_or_high_impact_policy"}
+      }
+    },
+    "provider_decisions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["capability", "decision", "authority_effect"],
+        "properties": {
+          "capability": {"type": "string", "minLength": 1},
+          "decision": {
+            "enum": ["reuse_directly", "generalize", "adapt_locally", "defer", "reject"]
+          },
+          "authority_effect": {
+            "enum": ["none", "gcl_side_only", "future_projection_only"]
+          }
+        }
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixture_id",
+        "source_family",
+        "fixture_bytes_authority",
+        "execution_provider",
+        "extractor",
+        "synthetic_content_allowed",
+        "network_required_for_replay"
+      ],
+      "properties": {
+        "fixture_id": {"const": "TC-FIXTURE-001"},
+        "source_family": {"const": "html"},
+        "fixture_bytes_authority": {"const": "gcl_retained"},
+        "execution_provider": {"const": "daft"},
+        "extractor": {"const": "trafilatura"},
+        "synthetic_content_allowed": {"const": false},
+        "network_required_for_replay": {"const": false}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_quality_proved",
+        "privacy_proved",
+        "legality_proved",
+        "safety_proved",
+        "fitness_for_training_proved",
+        "downstream_improvement_proved",
+        "external_project_conformance_claimed",
+        "commercial_claim_authorized"
+      ],
+      "properties": {
+        "dataset_quality_proved": {"const": false},
+        "privacy_proved": {"const": false},
+        "legality_proved": {"const": false},
+        "safety_proved": {"const": false},
+        "fitness_for_training_proved": {"const": false},
+        "downstream_improvement_proved": {"const": false},
+        "external_project_conformance_claimed": {"const": false},
+        "commercial_claim_authorized": {"const": false}
+      }
+    }
+  }
+}

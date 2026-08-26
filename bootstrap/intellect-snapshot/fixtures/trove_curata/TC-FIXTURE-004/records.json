@@ -1,0 +1,296 @@
+{
+  "schema_version": "0.1.0",
+  "fixture_id": "TC-FIXTURE-004",
+  "records": [
+    {
+      "record_id": "above-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "u0 u1 u2 u3 u4 u5 u6 u7 u8 u9 u10 u11 u12 u13 u14 u15 u16 u17 u18 u19 u20 u21"
+    },
+    {
+      "record_id": "above-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "u0 u1 u2 u3 u4 u5 u6 u7 u8 u9 u10 ux u12 u13 u14 u15 u16 u17 u18 u19 u20 u21"
+    },
+    {
+      "record_id": "below-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "v0 v1 v2 v3 v4 v5 v6 v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19"
+    },
+    {
+      "record_id": "below-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "v0 v1 v2 v3 v4 v5 v6 v7 v8 v9 vx v11 v12 v13 v14 v15 v16 v17 v18 v19"
+    },
+    {
+      "record_id": "boiler-a",
+      "record_class": "boilerplate",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "Standard notice records are retained for review. Project Alpha measures rainfall sensors across coastal stations."
+    },
+    {
+      "record_id": "boiler-b",
+      "record_class": "boilerplate",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "Standard notice records are retained for review. Project Beta studies ceramic fragments from inland sites."
+    },
+    {
+      "record_id": "chain-code",
+      "record_class": "code_math",
+      "language": "en",
+      "origin": {
+        "kind": "tc003_baseline_output",
+        "case_id": "code-math-control"
+      },
+      "text": "def f(x): return x**2\nThe matrix entry a[192, 0, 2] is not an IP address. The equation y = mx + b contains no contact data."
+    },
+    {
+      "record_id": "chain-dup-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "tc003_baseline_output",
+        "case_id": "duplicate-a"
+      },
+      "text": "Duplicate synthetic contact: <EMAIL_ADDRESS> and <PHONE_NUMBER>."
+    },
+    {
+      "record_id": "chain-dup-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "tc003_baseline_output",
+        "case_id": "duplicate-b"
+      },
+      "text": "Duplicate synthetic contact: <EMAIL_ADDRESS> and <PHONE_NUMBER>."
+    },
+    {
+      "record_id": "chain-negative",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "tc003_baseline_output",
+        "case_id": "negative-control"
+      },
+      "text": "This fixture contains ordinary prose about governed data processing. No identifiers are present."
+    },
+    {
+      "record_id": "code-variant",
+      "record_class": "code_math",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "def g(x): return x**2\nThe matrix entry a[192, 0, 2] is not an IP address. The equation y = mx + b contains no contact data."
+    },
+    {
+      "record_id": "disagree-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11 d12 d13 d14 d15 d16 d17 d18 d19 d20"
+    },
+    {
+      "record_id": "disagree-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 dx d11 d12 d13 d14 d15 d16 d17 d18 d19 d20"
+    },
+    {
+      "record_id": "fixture-exact-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "A retained duplicate record preserves identical bytes for deterministic observation."
+    },
+    {
+      "record_id": "fixture-exact-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "A retained duplicate record preserves identical bytes for deterministic observation."
+    },
+    {
+      "record_id": "multi-en",
+      "record_class": "multilingual",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "The archive records a governed transformation and requires review before release."
+    },
+    {
+      "record_id": "multi-fr",
+      "record_class": "multilingual",
+      "language": "fr",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "L’archive consigne une transformation gouvernée et exige un examen avant diffusion."
+    },
+    {
+      "record_id": "near-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "The governed archive retains every source record as immutable evidence while each derived object carries a digest receipt route decision provider identity and explicit review boundary."
+    },
+    {
+      "record_id": "near-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "The governed archive preserves every source record as immutable evidence while each derived object carries a digest receipt route decision provider identity and explicit review boundary."
+    },
+    {
+      "record_id": "negative-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "Coastal sensors record tide height at noon."
+    },
+    {
+      "record_id": "negative-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "Ceramic fragments are catalogued by excavation layer."
+    },
+    {
+      "record_id": "normalized-variant",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "  This fixture contains ordinary prose about governed data processing.\r\nNo   identifiers are present.  "
+    },
+    {
+      "record_id": "reorder-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "The council records the source. The verifier checks the digest. The steward decides the route."
+    },
+    {
+      "record_id": "reorder-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "The steward decides the route. The council records the source. The verifier checks the digest."
+    },
+    {
+      "record_id": "short-a",
+      "record_class": "short_text",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "alpha beta"
+    },
+    {
+      "record_id": "short-b",
+      "record_class": "short_text",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "alpha gamma"
+    },
+    {
+      "record_id": "trans-a",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "t0 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23"
+    },
+    {
+      "record_id": "trans-b",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "t0 t1 t2 t3 t4 tx t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23"
+    },
+    {
+      "record_id": "trans-c",
+      "record_class": "general",
+      "language": "en",
+      "origin": {
+        "kind": "fixture_retained",
+        "case_id": null
+      },
+      "text": "t0 t1 t2 t3 t4 tx t6 t7 t8 t9 ty t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23"
+    }
+  ]
+}

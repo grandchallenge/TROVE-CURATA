@@ -1,0 +1,5 @@
+# Deliberately no automatic human review routing.
+# GI-STEWARD-0002 defines no mandatory routine reviewers. Exact-revision
+# Adversary and Referee findings and the one Human Steward disposition are
+# routed by the governed packet, not by CODEOWNERS. Security and policy checks
+# remain required through protected branch configuration.

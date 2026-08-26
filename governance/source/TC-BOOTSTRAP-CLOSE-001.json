@@ -1,0 +1,719 @@
+{
+  "artifact_inventory": [
+    {
+      "blob_sha": "e8faac5ad766a6351b0b928ef78ede18c6e94503",
+      "mode": "100644",
+      "path": ".github/workflows/trove-curata-duplicate-fixture.yml",
+      "size": 6109
+    },
+    {
+      "blob_sha": "b527b4b69f00cb007f6d97fef658d291e03b13c5",
+      "mode": "100644",
+      "path": ".github/workflows/trove-curata-fixture.yml",
+      "size": 3743
+    },
+    {
+      "blob_sha": "4b2f64354bb7af7f8e3f6f3ea7db79d375b28bda",
+      "mode": "100644",
+      "path": ".github/workflows/trove-curata-pii-fixture.yml",
+      "size": 3288
+    },
+    {
+      "blob_sha": "fc9564c5e262e38fc1a70e4e7869b347c2d9b64a",
+      "mode": "100644",
+      "path": ".github/workflows/trove-curata-quality-fixture.yml",
+      "size": 4031
+    },
+    {
+      "blob_sha": "f2fd1c7196950d75fde73378a91770c2afdeffa7",
+      "mode": "100644",
+      "path": ".github/workflows/trove-curata-transform-fixture.yml",
+      "size": 5236
+    },
+    {
+      "blob_sha": "42161f0f3c45b1f0085b42584033a0e77e2b630d",
+      "mode": "100644",
+      "path": "docs/TC_FIXTURE_001.md",
+      "size": 2066
+    },
+    {
+      "blob_sha": "0396f4afdbae92c7d83f13047dcc9f76dc7a45d0",
+      "mode": "100644",
+      "path": "docs/TC_FIXTURE_002.md",
+      "size": 2059
+    },
+    {
+      "blob_sha": "61d8d48d5098fb4b0bc38f08b751df898802adfd",
+      "mode": "100644",
+      "path": "docs/TC_FIXTURE_003.md",
+      "size": 1376
+    },
+    {
+      "blob_sha": "be713968396f8ebcc0d532f6c9afc2b680666e7c",
+      "mode": "100644",
+      "path": "docs/TC_FIXTURE_003_REVIEW_REMEDY_001.md",
+      "size": 1968
+    },
+    {
+      "blob_sha": "b946e10563ebff3d096acb1ef3076ce7beb28d4e",
+      "mode": "100644",
+      "path": "docs/TC_FIXTURE_004.md",
+      "size": 1303
+    },
+    {
+      "blob_sha": "e9be407d58c2e5f64fe89c342c3a3620b7f803a8",
+      "mode": "100644",
+      "path": "docs/TC_FIXTURE_004_REVIEW_REMEDY_001.md",
+      "size": 2501
+    },
+    {
+      "blob_sha": "f51d2abc02f817ff14b6c71f9b16cc15a90e98dd",
+      "mode": "100644",
+      "path": "docs/TC_FIXTURE_005.md",
+      "size": 2435
+    },
+    {
+      "blob_sha": "650e16366511b4a9c4163d7f6d1e87d9e82a984a",
+      "mode": "100644",
+      "path": "docs/TROVE_CURATA_REVIEW_REMEDY_001.md",
+      "size": 1344
+    },
+    {
+      "blob_sha": "6ef6e96b6a4607962ea07188993431d962ad6fb5",
+      "mode": "100644",
+      "path": "docs/TROVE_CURATA_XREF_WP00.md",
+      "size": 9696
+    },
+    {
+      "blob_sha": "1cbf03b94c847fb6bd6a9bc576255d741d0fab23",
+      "mode": "100644",
+      "path": "docs/assets/trove-curata-progress.png",
+      "size": 2179694
+    },
+    {
+      "blob_sha": "f3518d1bf6bffdfdafc344eeb7cf3aa59af75d53",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/boilerplate_heavy.html",
+      "size": 633
+    },
+    {
+      "blob_sha": "b19bcdb5b2af374be1075b9e6818d1d7ba6b40d0",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/duplicate_a.html",
+      "size": 283
+    },
+    {
+      "blob_sha": "b19bcdb5b2af374be1075b9e6818d1d7ba6b40d0",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/duplicate_b.html",
+      "size": 283
+    },
+    {
+      "blob_sha": "cce9826968be5c8276eaa798476e56cdd0bfdd48",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/malformed_markup.html",
+      "size": 236
+    },
+    {
+      "blob_sha": "968aebaaeaabb1ccf2be9fd890fe8d2b175f8454",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/math_code.html",
+      "size": 415
+    },
+    {
+      "blob_sha": "7c8b1fa4b3248c450d2549cf502590aa3b506faa",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/multilingual.html",
+      "size": 307
+    },
+    {
+      "blob_sha": "cf7652a268b924a5878dfffa5b95e0a08ad2bd69",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/ordinary_article.html",
+      "size": 362
+    },
+    {
+      "blob_sha": "7cbe3bb4b884886f35ee8b1979862a7f9ce72e5b",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/pii_observation.html",
+      "size": 317
+    },
+    {
+      "blob_sha": "09f9d37377c30bf2702560910cdce4e3b3695a29",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/html/policy_review.html",
+      "size": 320
+    },
+    {
+      "blob_sha": "dee6dccea32a1255b2db4a7167a82b82b38c838f",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-001/manifest.json",
+      "size": 3055
+    },
+    {
+      "blob_sha": "e6640282668baa757a3ffe8c52c3a958d9860720",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/manifest.json",
+      "size": 7321
+    },
+    {
+      "blob_sha": "623a4aa6b8c8895993c6e1a393471aba9b2d3df5",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/code_math_negative.txt",
+      "size": 124
+    },
+    {
+      "blob_sha": "1d39d74fa3cf494d25af05d0340da07cc21835ec",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/duplicate_a.txt",
+      "size": 73
+    },
+    {
+      "blob_sha": "1d39d74fa3cf494d25af05d0340da07cc21835ec",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/duplicate_b.txt",
+      "size": 73
+    },
+    {
+      "blob_sha": "6fc873f36118dbe3b76fefcc23352632c3ef1e9c",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/multilingual_observation.txt",
+      "size": 88
+    },
+    {
+      "blob_sha": "7bc838c080271e77069c664efb6357469abac768",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/name_location_ambiguity.txt",
+      "size": 46
+    },
+    {
+      "blob_sha": "b631def9046a536537a0969ff6649df3683a254e",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/negative_control.txt",
+      "size": 97
+    },
+    {
+      "blob_sha": "bc0ba63b7285048f41abea4760093a62b7fa35a0",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/overlapping_spans.txt",
+      "size": 33
+    },
+    {
+      "blob_sha": "7a4dc520e8e038bb9c12a657316eaece70148f95",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/policy_review_without_pii.txt",
+      "size": 74
+    },
+    {
+      "blob_sha": "b3947bdd1ab31825346dbcb8a7d7fb6ef603fe50",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/provider_rules_disagreement.txt",
+      "size": 52
+    },
+    {
+      "blob_sha": "3ea5f0b2ff2fb6a0f80bcca06b5806eaa738fd93",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/synthetic_email_phone.txt",
+      "size": 65
+    },
+    {
+      "blob_sha": "09bf48322d50f4a8b0ac72e0df1bd7b5d591dc7d",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-002/text/synthetic_postal_network.txt",
+      "size": 81
+    },
+    {
+      "blob_sha": "b971c45ca6e17790fc5295c6ea418390ab92ec23",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-003/manifest.json",
+      "size": 11777
+    },
+    {
+      "blob_sha": "5224ee7de6e0652bda637f78ce55fcd2b9ce3c93",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-004/manifest.json",
+      "size": 8034
+    },
+    {
+      "blob_sha": "7bd1f4708871188433b3ca5a1693c1b9f42bc366",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-004/records.json",
+      "size": 8659
+    },
+    {
+      "blob_sha": "08cf1cfb5487e15ab991cd1b0d52c3d01cd6e996",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-005/manifest.json",
+      "size": 5103
+    },
+    {
+      "blob_sha": "d2cbede99911c61f9e6b49e865824b04a006e695",
+      "mode": "100644",
+      "path": "fixtures/trove_curata/TC-FIXTURE-005/records.json",
+      "size": 1176
+    },
+    {
+      "blob_sha": "ca13f141badee1e4b0c9633e3ee773cc33ce8ca5",
+      "mode": "100644",
+      "path": "governance/trove_curata_fixture_003_review_attestation.json",
+      "size": 2982
+    },
+    {
+      "blob_sha": "71e0de8852ee423458bbcf450e626bf3b0655eea",
+      "mode": "100644",
+      "path": "governance/trove_curata_fixture_004_review_attestation.json",
+      "size": 3736
+    },
+    {
+      "blob_sha": "aaae651ee83b2e8a12a00239c3df0e08fb7281b3",
+      "mode": "100644",
+      "path": "governance/trove_curata_review_attestation.json",
+      "size": 1611
+    },
+    {
+      "blob_sha": "c5f9b855a8782188f1988ae82a92fb5c23723390",
+      "mode": "100644",
+      "path": "governance/trove_curata_xref_work_package.json",
+      "size": 3250
+    },
+    {
+      "blob_sha": "3a526973135ae9f9d29a5662727edb7f88cde134",
+      "mode": "100644",
+      "path": "requirements-trove-curata-duplicate.txt",
+      "size": 45
+    },
+    {
+      "blob_sha": "ce425bf02bb1f65fd23b5e4f087596c689909b6a",
+      "mode": "100644",
+      "path": "requirements-trove-curata-pii.txt",
+      "size": 44
+    },
+    {
+      "blob_sha": "35d7297514bded33ef7ec8452aba8a52cfc2cd9b",
+      "mode": "100644",
+      "path": "requirements-trove-curata-transform.txt",
+      "size": 73
+    },
+    {
+      "blob_sha": "acb23850735fc5167ed12d49d9d4f51d46aaf4c4",
+      "mode": "100644",
+      "path": "requirements-trove-curata.txt",
+      "size": 32
+    },
+    {
+      "blob_sha": "6392ca4371499d3f1085ab60d82d04fc5077df31",
+      "mode": "100644",
+      "path": "schemas/trove_curata_duplicate_fixture_report.schema.json",
+      "size": 8995
+    },
+    {
+      "blob_sha": "1fb9d73fdc000f1a5ec87ba8156f3c56d847af58",
+      "mode": "100644",
+      "path": "schemas/trove_curata_fixture_003_review_attestation.schema.json",
+      "size": 3955
+    },
+    {
+      "blob_sha": "ccc2422e7fd892c750d5d77320a21e749ee74b0b",
+      "mode": "100644",
+      "path": "schemas/trove_curata_fixture_004_review_attestation.schema.json",
+      "size": 4194
+    },
+    {
+      "blob_sha": "337ddbadd5d38f84c0b833ee8e07cc89a041c773",
+      "mode": "100644",
+      "path": "schemas/trove_curata_fixture_report.schema.json",
+      "size": 4469
+    },
+    {
+      "blob_sha": "bc4dad18ce09200817d71f541d56ad562a2784d1",
+      "mode": "100644",
+      "path": "schemas/trove_curata_pii_fixture_report.schema.json",
+      "size": 10199
+    },
+    {
+      "blob_sha": "86b2160f069316c6438c8fa35e9230cab30905a4",
+      "mode": "100644",
+      "path": "schemas/trove_curata_quality_fixture_report.schema.json",
+      "size": 4924
+    },
+    {
+      "blob_sha": "9a68331138858494df51c10ac53e18664ff77339",
+      "mode": "100644",
+      "path": "schemas/trove_curata_review_attestation.schema.json",
+      "size": 4158
+    },
+    {
+      "blob_sha": "bd754f2d3c2f272dcf9f295b8038f11d91549ed6",
+      "mode": "100644",
+      "path": "schemas/trove_curata_transform_fixture_report.schema.json",
+      "size": 6104
+    },
+    {
+      "blob_sha": "ceee8dd7273c2c418eb406f353dfa7dd037ae7e3",
+      "mode": "100644",
+      "path": "schemas/trove_curata_xref_work_package.schema.json",
+      "size": 5666
+    },
+    {
+      "blob_sha": "ad678d396e4c3c8ed4eb22585d71be78c69e4001",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_contract.py",
+      "size": 7573
+    },
+    {
+      "blob_sha": "02f3f0b49fb5825bf45fbd34b0f975cb02fedf1f",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_chain.py",
+      "size": 3764
+    },
+    {
+      "blob_sha": "90a0c2c27edb2f4fbbea82928cb9927f6dc8fc0b",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_contract.py",
+      "size": 8864
+    },
+    {
+      "blob_sha": "79dbc6ac37a9181c320d87b78960c1855d9311d1",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_engine.py",
+      "size": 6171
+    },
+    {
+      "blob_sha": "ca8bf8524587a4b7d45b5b359ef93f697f7065d7",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_fixture.py",
+      "size": 1063
+    },
+    {
+      "blob_sha": "d4669f03aa5223f264f8a36f66e6e373681eedce",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_identity.py",
+      "size": 3361
+    },
+    {
+      "blob_sha": "f4937f9e57bd4e0fd164813dadff72c63ff552bf",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_minhash.py",
+      "size": 5342
+    },
+    {
+      "blob_sha": "efd97f540eec96f4ea0914102212c5da51c6e7f3",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_report.py",
+      "size": 5892
+    },
+    {
+      "blob_sha": "6b4f24ddddb28ee9bbc5a4bc3abd91c1139d90a8",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_similarity.py",
+      "size": 1393
+    },
+    {
+      "blob_sha": "6d572ab4e6bd7d7c9460a4bb0898f545a7cdfe3d",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_duplicate_validation.py",
+      "size": 3109
+    },
+    {
+      "blob_sha": "959eea5006d34ad60983808990f8023fc882927b",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_fixture.py",
+      "size": 17946
+    },
+    {
+      "blob_sha": "aa1e5fe1791d0ac7206c48806e066aa6650145e3",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_fixture_003_review_attestation.py",
+      "size": 7228
+    },
+    {
+      "blob_sha": "e5c8b70ad7801caa73ab071d61d8dcc529fcffb4",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_fixture_004_review_attestation.py",
+      "size": 8335
+    },
+    {
+      "blob_sha": "492ab765e9aaee427fee9257c7a589b872272dec",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_pii_analysis.py",
+      "size": 7436
+    },
+    {
+      "blob_sha": "7ac22ba780cae00e8902841f798e66be5ade7886",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_pii_contract.py",
+      "size": 11932
+    },
+    {
+      "blob_sha": "d0fa0899e8056499366a172cff4158a225a21c9a",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_pii_fixture.py",
+      "size": 1483
+    },
+    {
+      "blob_sha": "fedb05d32e219bacbcdf3095f4acde458b2ee337",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_pii_report.py",
+      "size": 13581
+    },
+    {
+      "blob_sha": "34fc224e4cd50b3e71f66b73615a6d95579a960f",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_quality_fixture.py",
+      "size": 17420
+    },
+    {
+      "blob_sha": "3533bbb1813686b5795edd1b4671a5dbe0516626",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_review_attestation.py",
+      "size": 3848
+    },
+    {
+      "blob_sha": "075198b7d0c3b8ab7d7988b9614b6fd4d67b911b",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_transform_contract.py",
+      "size": 8038
+    },
+    {
+      "blob_sha": "179beec3e2dadaa8de55333cc411c0ad0d3792b8",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_transform_engine.py",
+      "size": 10757
+    },
+    {
+      "blob_sha": "1f7509b2d68ffd37dd0aeb192440c96eb462f85f",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_transform_fixture.py",
+      "size": 1451
+    },
+    {
+      "blob_sha": "4a5e1da8ae088e6548c21c953516582f45733c23",
+      "mode": "100644",
+      "path": "src/grand_intellect/trove_curata_transform_report.py",
+      "size": 13331
+    },
+    {
+      "blob_sha": "f81b21016b1c7239ec0bf7fccaf9bd56bd698e49",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_contract.py",
+      "size": 6663
+    },
+    {
+      "blob_sha": "fd977c9624586324c8555aee09c07c5a10af1813",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_duplicate_fixture.py",
+      "size": 5900
+    },
+    {
+      "blob_sha": "9af4e2832ba6d04e0d28cf2bfc558cd387933f68",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_duplicate_mutations.py",
+      "size": 5760
+    },
+    {
+      "blob_sha": "2327277853c5ee0c2b995a50bde3248ea9756563",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_fixture.py",
+      "size": 3532
+    },
+    {
+      "blob_sha": "6bcf79d8e835d3ee55a52062f4009258ef536d13",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_fixture_003_review_attestation.py",
+      "size": 5006
+    },
+    {
+      "blob_sha": "af88d3510a5f568f329161b8fa8acfecc808c5cf",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_fixture_004_review_attestation.py",
+      "size": 7102
+    },
+    {
+      "blob_sha": "274f27f8b78c11e413da7dff25401362ed3e0349",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_pii_fixture.py",
+      "size": 7537
+    },
+    {
+      "blob_sha": "d4383dc2452ff73f33836c271386dc29a28b9b7f",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_quality_fixture.py",
+      "size": 6350
+    },
+    {
+      "blob_sha": "4f11e9ce6e2c819972b0aba98094d175d31114af",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_review_attestation.py",
+      "size": 3804
+    },
+    {
+      "blob_sha": "f2f173f739c2bd6ff812ac208237ae2f4920163a",
+      "mode": "100644",
+      "path": "tests/test_trove_curata_transform_fixture.py",
+      "size": 5636
+    }
+  ],
+  "artifact_inventory_sha256": "ad2803363071e7402cdaa48b3d39062a0efcaac2e53eac69ab76a93001484d6d",
+  "authority_boundary": {
+    "aether_role": "future_projection_nonblocking",
+    "bootstrap_closure_activates_destination": false,
+    "bootstrap_closure_admits_corpus": false,
+    "gcl_contained": true,
+    "github_operational_record": true,
+    "metrics_have_admission_authority": false,
+    "passports_have_admission_authority": false,
+    "project_owner": "grandchallenge",
+    "providers_have_admission_authority": false,
+    "providers_have_policy_authority": false
+  },
+  "bootstrap_ladder": [
+    {
+      "exact_head": "b6158a995a97ae58abfe139925de4ec6c9cd0a0b",
+      "protected_merge": "e080192f3c4cb1881cf781572dd1246b22792163",
+      "pull_request": 24,
+      "record_id": "TROVE-CURATA-XREF-WP00",
+      "role": "foundation"
+    },
+    {
+      "exact_head": "e8d12e6f314ddabcf3a36f9ec49216b669d07024",
+      "protected_merge": "59b34a195aa7d4fdd381d428dab3e4f18e2016e7",
+      "pull_request": 28,
+      "record_id": "TC-FIXTURE-001",
+      "role": "extraction_observation"
+    },
+    {
+      "exact_head": "04fdb6bb3232be2d94cb197e19aa0deb333b0c97",
+      "protected_merge": "b6a1511a7f1d7ca01108f57cede2982377ebd270",
+      "pull_request": 30,
+      "record_id": "TC-FIXTURE-002",
+      "role": "pii_observation"
+    },
+    {
+      "exact_head": "af5a568a2f49db949ff5c355f33ab29231cabac4",
+      "protected_merge": "0096eb21ca62c5ef7f6e458f358edcb1cd963a20",
+      "pull_request": 44,
+      "record_id": "TC-FIXTURE-003",
+      "role": "governed_transformation"
+    },
+    {
+      "exact_head": "09ebdf7e1f01abc1dd75450725b4e8b0d93f3a65",
+      "protected_merge": "5c5f6a1cbb6327c559884a79abc119cf706153af",
+      "pull_request": 46,
+      "record_id": "TC-FIXTURE-003-REVIEW-REMEDY-001",
+      "role": "prospective_review_remedy"
+    },
+    {
+      "exact_head": "6dc65962ec77e17ae5bdd2c75ccd5da63aefcef7",
+      "protected_merge": "6e2385a841dfd55bbab480d79a47611cc6557103",
+      "pull_request": 49,
+      "record_id": "TC-FIXTURE-004",
+      "role": "duplicate_observation"
+    },
+    {
+      "exact_head": "dbb68b54aaf6df2eced710e6dd3936aa3bb2f7fc",
+      "protected_merge": "70a0a74502e0480d387d740027e48751286e4bfe",
+      "pull_request": 51,
+      "record_id": "TC-FIXTURE-004-REVIEW-REMEDY-001",
+      "role": "prospective_review_remedy"
+    },
+    {
+      "exact_head": "2318a962f3b0f79b47f3b0b03efa2743298b6776",
+      "protected_merge": "e5d0c3415250581350d01a27fea6bd60c8162c56",
+      "pull_request": 60,
+      "record_id": "TC-FIXTURE-005",
+      "role": "quality_signal_observation"
+    }
+  ],
+  "bootstrap_roots": {
+    "fixtures/trove_curata": "a8e12624ea8e40aec554ddf3fda072eace0b791f",
+    "schemas": "5854b49efbfbf013ddfe7aa76697a3a49552b6e1",
+    "workflows": "01bdb91536cc20c149d517824eda8ff24b4a10ae"
+  },
+  "claim_boundary": {
+    "canonical_record_selected": false,
+    "commercial_claim_authorized": false,
+    "dataset_quality_certified": false,
+    "downstream_improvement_proved": false,
+    "legality_or_rights_certified": false,
+    "novelty_or_priority_claimed": false,
+    "privacy_certified": false,
+    "production_corpus_admitted": false,
+    "public_release_authorized": false,
+    "records_deleted": false,
+    "records_ranked": false,
+    "records_rejected": false,
+    "records_retained_by_authority": false,
+    "records_suppressed": false,
+    "reference_contamination_absence_proved": false,
+    "release_candidate_declared": false,
+    "training_fitness_qualified": false
+  },
+  "closure_id": "TC-BOOTSTRAP-CLOSE-001",
+  "closure_record_sha256": "ec871730221523a55e09c81b7e81d785284e4b181ec84ac65480962c9f8dee27",
+  "destination": {
+    "acceptance_record_id": "TC-REPO-ACCEPT-001",
+    "activation_state": "not_active",
+    "canonical_from": "TC-FIXTURE-006",
+    "repository": "grandchallenge/TROVE-CURATA",
+    "repository_observed_existing_at_preparation": false
+  },
+  "migration_contract": {
+    "destination_import_must_match_source_blobs": true,
+    "destination_may_activate_before_readback": false,
+    "destination_may_invent_bootstrap_authority": false,
+    "destination_protected_acceptance_required": true,
+    "destination_replay_fixtures": [
+      "TC-FIXTURE-001",
+      "TC-FIXTURE-002",
+      "TC-FIXTURE-003",
+      "TC-FIXTURE-004",
+      "TC-FIXTURE-005"
+    ],
+    "fixture_006_may_be_implemented_in_intellect_after_activation": false,
+    "fixture_006_may_begin_before_activation": false,
+    "intellect_historical_replay_remains_permitted": true,
+    "intellect_prospective_historical_correction_remains_permitted": true,
+    "review_tier": "T3",
+    "source_protected_merge_required": true,
+    "two_sided_readback_required": true
+  },
+  "review_remedies": {
+    "fixture_003": {
+      "historical_defect_preserved": true,
+      "historical_state_rewritten": false,
+      "prospective_remedy_record": "TC-FIXTURE-003-REVIEW-REMEDY-001"
+    },
+    "fixture_004": {
+      "historical_defect_preserved": true,
+      "historical_state_rewritten": false,
+      "prospective_remedy_record": "TC-FIXTURE-004-REVIEW-REMEDY-001"
+    }
+  },
+  "schema_paths": [
+    "schemas/trove_curata_duplicate_fixture_report.schema.json",
+    "schemas/trove_curata_fixture_003_review_attestation.schema.json",
+    "schemas/trove_curata_fixture_004_review_attestation.schema.json",
+    "schemas/trove_curata_fixture_report.schema.json",
+    "schemas/trove_curata_pii_fixture_report.schema.json",
+    "schemas/trove_curata_quality_fixture_report.schema.json",
+    "schemas/trove_curata_review_attestation.schema.json",
+    "schemas/trove_curata_transform_fixture_report.schema.json",
+    "schemas/trove_curata_xref_work_package.schema.json"
+  ],
+  "schema_version": "0.1.0",
+  "source": {
+    "bootstrap_role_after_activation": "immutable_history_replay_and_constitutional_context",
+    "issue_number": 68,
+    "protected_head_at_preparation": "8c3da17b2c401944e43b6e9bb0fae3bc95b05624",
+    "protected_tree_at_preparation": "9d1f2d2b821a3398e8895b75f8badebc2fb6a059",
+    "repository": "grandchallenge/INTELLECT"
+  },
+  "status": "prepared_pending_source_merge_and_destination_acceptance",
+  "workflow_paths": [
+    ".github/workflows/trove-curata-duplicate-fixture.yml",
+    ".github/workflows/trove-curata-fixture.yml",
+    ".github/workflows/trove-curata-pii-fixture.yml",
+    ".github/workflows/trove-curata-quality-fixture.yml",
+    ".github/workflows/trove-curata-transform-fixture.yml"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://grandchallenge.ai/schemas/trove_curata_quality_fixture_report.schema.json",
+  "title":"TC-FIXTURE-005 quality observation report",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","fixture_id","configuration_sha256","record_count","records","routes","claims","passed","report_sha256"],
+  "properties":{
+    "schema_version":{"const":"0.1.0"},
+    "fixture_id":{"const":"TC-FIXTURE-005"},
+    "configuration_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "record_count":{"const":12},
+    "records":{"type":"array","minItems":12,"maxItems":12,"items":{"$ref":"#/$defs/record"}},
+    "routes":{"type":"object","additionalProperties":false,"required":["no_quality_flag_observed","quality_review_required"],"properties":{"no_quality_flag_observed":{"type":"integer","minimum":0},"quality_review_required":{"type":"integer","minimum":0}}},
+    "claims":{"$ref":"#/$defs/claims"},
+    "passed":{"const":true},
+    "report_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  },
+  "$defs":{
+    "metrics":{"type":"object","additionalProperties":false,"required":["char_count","token_count","line_count","alphabetic_ratio","symbol_ratio","unique_token_ratio","repeated_line_ratio","url_count","replacement_marker_count"],"properties":{"char_count":{"type":"integer","minimum":0},"token_count":{"type":"integer","minimum":0},"line_count":{"type":"integer","minimum":0},"alphabetic_ratio":{"type":"string","pattern":"^[01]\\.[0-9]{6}$"},"symbol_ratio":{"type":"string","pattern":"^[01]\\.[0-9]{6}$"},"unique_token_ratio":{"type":"string","pattern":"^[01]\\.[0-9]{6}$"},"repeated_line_ratio":{"type":"string","pattern":"^[01]\\.[0-9]{6}$"},"url_count":{"type":"integer","minimum":0},"replacement_marker_count":{"type":"integer","minimum":0}}},
+    "probe":{"type":"object","additionalProperties":false,"required":["name","version","evaluated","skipped_reason","flags","may_authorize_route","may_authorize_admission","may_authorize_rejection"],"properties":{"name":{"const":"gcl_readability_probe"},"version":{"const":"0.1.0"},"evaluated":{"type":"boolean"},"skipped_reason":{"type":["string","null"]},"flags":{"type":"array","items":{"type":"string"},"uniqueItems":true},"may_authorize_route":{"const":false},"may_authorize_admission":{"const":false},"may_authorize_rejection":{"const":false}}},
+    "baseline":{"type":"object","additionalProperties":false,"required":["name","version","flags","may_authorize_route"],"properties":{"name":{"const":"gcl_structural_baseline"},"version":{"const":"0.1.0"},"flags":{"type":"array","items":{"type":"string"},"uniqueItems":true},"may_authorize_route":{"const":false}}},
+    "record":{"type":"object","additionalProperties":false,"required":["case_id","case_class","source_kind","record_id","record_class","language","source_sha256","source_record_mutated","duplicate_component_member","metrics","probe","baseline","disagreement","route","ranking","admission_state","rejection_state","deletion_state","canonical_member","observation_sha256"],"properties":{"case_id":{"type":"string"},"case_class":{"type":"string"},"source_kind":{"enum":["predecessor","synthetic"]},"record_id":{"type":"string"},"record_class":{"type":"string"},"language":{"type":"string"},"source_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"source_record_mutated":{"const":false},"duplicate_component_member":{"type":"boolean"},"metrics":{"$ref":"#/$defs/metrics"},"probe":{"$ref":"#/$defs/probe"},"baseline":{"$ref":"#/$defs/baseline"},"disagreement":{"type":"boolean"},"route":{"enum":["no_quality_flag_observed","quality_review_required"]},"ranking":{"type":"null"},"admission_state":{"const":"not_admitted"},"rejection_state":{"const":"not_rejected"},"deletion_state":{"const":"not_deleted"},"canonical_member":{"type":"null"},"observation_sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}},
+    "claims":{"type":"object","additionalProperties":false,"required":["records_ranked","records_deleted","records_suppressed","canonical_member_selected","corpus_admitted","corpus_rejected","dataset_quality_certified","privacy_compliance_proved","legality_proved","fitness_for_training_proved","release_qualified","downstream_improvement_proved","novelty_or_priority_claimed","commercial_claim_authorized"],"properties":{"records_ranked":{"const":false},"records_deleted":{"const":false},"records_suppressed":{"const":false},"canonical_member_selected":{"const":false},"corpus_admitted":{"const":false},"corpus_rejected":{"const":false},"dataset_quality_certified":{"const":false},"privacy_compliance_proved":{"const":false},"legality_proved":{"const":false},"fitness_for_training_proved":{"const":false},"release_qualified":{"const":false},"downstream_improvement_proved":{"const":false},"novelty_or_priority_claimed":{"const":false},"commercial_claim_authorized":{"const":false}}}
+  }
+}

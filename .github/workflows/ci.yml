@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: trove-curata-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  acceptance:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11.14", "3.12.13"]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install locked CI dependencies
+        run: python -m pip install -r requirements-ci.txt
+      - name: Compile acceptance surface
+        run: python -m compileall -q scripts tests
+      - name: Validate acceptance and mutations
+        run: python -m unittest discover -s tests -v
+      - name: Require deterministic validation output
+        run: |
+          python scripts/validate_bootstrap_acceptance.py governance/trove_curata_repo_acceptance.json > /tmp/accept-a.json
+          python scripts/validate_bootstrap_acceptance.py governance/trove_curata_repo_acceptance.json > /tmp/accept-b.json
+          cmp /tmp/accept-a.json /tmp/accept-b.json
