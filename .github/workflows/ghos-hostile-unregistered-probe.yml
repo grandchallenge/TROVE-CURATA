@@ -1,0 +1,15 @@
+name: GHOS hostile unregistered workflow probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inert-probe:
+    if: false
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Inert marker
+        run: echo 'This job is deliberately disabled; the workflow exists only as routing-coverage test data.'
