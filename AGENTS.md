@@ -1,5 +1,7 @@
 # Agent instructions
 
+**Engineering architecture and reliability:** Adopt [GCL-ENGINEERING-001 v1.0.0](https://github.com/grandchallenge/gcl-standards/blob/2a3cfed9419ba9b74eeaaee70b9db8c3f47f3c9b/standards/GCL-ENGINEERING-001.md), pinned at protected `gcl-standards` commit `2a3cfed9419ba9b74eeaaee70b9db8c3f47f3c9b`. Engineering agents own architecture, necessity, integration, tests, deploy/readback and retirement; reuse GitHub and existing components before inventing infrastructure. Do not duplicate workflow authority or mistake CI/merge for live completion. Preserve this repository's superior, reserved, and domain-specific policies. Cross-repository adoption requires explicit readback, never assumption.
+
 TROVE–CURATA is the governed GCL data-estate and curation-control repository.
 
 Until `TC-BOOTSTRAP-ACTIVATE-001` records two-sided protected readback, the repository is not active and `TC-FIXTURE-006` may not begin.
